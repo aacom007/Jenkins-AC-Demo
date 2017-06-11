@@ -1,0 +1,5 @@
+C:\Work\A-CheckDemo\ACDemo2\ACDemo2\Xamarin1\bin\Debug\Xamarin1.dll
+C:\Work\A-CheckDemo\ACDemo2\ACDemo2\Xamarin1\bin\Debug\Xamarin1.pdb
+C:\Work\A-CheckDemo\ACDemo2\ACDemo2\Xamarin1\obj\Debug\Xamarin1.csprojResolveAssemblyReference.cache
+C:\Work\A-CheckDemo\ACDemo2\ACDemo2\Xamarin1\obj\Debug\Xamarin1.dll
+C:\Work\A-CheckDemo\ACDemo2\ACDemo2\Xamarin1\obj\Debug\Xamarin1.pdb

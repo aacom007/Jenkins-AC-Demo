@@ -1,0 +1,2735 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NGeoNames</name>
+    </assembly>
+    <members>
+        <member name="T:NGeoNames.Composers.Admin2CodeComposer">
+            <summary>
+            Provides methods for composing a string representing an <see cref="T:NGeoNames.Entities.Admin2Code"/>.
+            </summary>
+        </member>
+        <member name="T:NGeoNames.Composers.BaseComposer`1">
+            <summary>
+            Provides an (abstract) baseclass for composers.
+            </summary>
+            <typeparam name="T">The type of objects to compose.</typeparam>
+        </member>
+        <member name="T:NGeoNames.Composers.IComposer`1">
+            <summary>
+            Defines a generalized composer to compose geoname.org files of a specific type.
+            </summary>
+            <typeparam name="T">The type of objects to compose.</typeparam>
+        </member>
+        <member name="M:NGeoNames.Composers.IComposer`1.Compose(`0)">
+            <summary>
+            Composes a string representing an object of type T to be used in geoname.org files.
+            </summary>
+            <param name="value">An object that represents the value to be written.</param>
+            <returns>A string representing an object of type T to be used in geoname.org files.</returns>
+        </member>
+        <member name="P:NGeoNames.Composers.IComposer`1.Encoding">
+            <summary>
+            Gets the <see cref="P:NGeoNames.Composers.IComposer`1.Encoding"/> to use when writing/composing the file/stream.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Composers.IComposer`1.FieldSeparator">
+            <summary>
+            Gets the field separator to use when writing/composing the file/stream. 
+            </summary>
+        </member>
+        <member name="F:NGeoNames.Composers.BaseComposer`1.DEFAULTFIELDSEPARATOR">
+            <summary>
+            Defines the default fieldseparator (default: \t).
+            </summary>
+        </member>
+        <member name="F:NGeoNames.Composers.BaseComposer`1.DEFAULTENCODING">
+            <summary>
+            Defines the default <see cref="P:NGeoNames.Composers.BaseComposer`1.Encoding"/> (default: UTF8).
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Composers.BaseComposer`1.#ctor">
+            <summary>
+            Initializes a composer with <see cref="F:NGeoNames.Composers.BaseComposer`1.DEFAULTENCODING"/> and <see cref="F:NGeoNames.Composers.BaseComposer`1.DEFAULTFIELDSEPARATOR"/>.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Composers.BaseComposer`1.Compose(`0)">
+            <summary>
+            Composes the specified object into a string.
+            </summary>
+            <param name="value">The object to be composed into a string.</param>
+            <returns>A string representing the specified object.</returns>
+        </member>
+        <member name="M:NGeoNames.Composers.BaseComposer`1.#ctor(System.Text.Encoding,System.Char)">
+            <summary>
+            Initializes a composer with the specified <see cref="P:NGeoNames.Composers.BaseComposer`1.Encoding"/> and fieldseparator.
+            </summary>
+            <param name="encoding"><see cref="P:NGeoNames.Composers.BaseComposer`1.Encoding"/> the composer will use.</param>
+            <param name="fieldseparator">Field separator to use when composing the file/stream.</param>
+        </member>
+        <member name="M:NGeoNames.Composers.BaseComposer`1.ArrayToValue(System.Collections.Generic.IEnumerable{System.String},System.String)">
+            <summary>
+            Concatenates the elements of an array, using the specified separator between each element, to form a single
+            delimited value.
+            </summary>
+            <param name="values">The values to put in delimited format.</param>
+            <param name="separator">The string to use as a separator.</param>
+            <returns>
+            A string that consists of the elements of values delimited by the separator string. If values is an empty
+            array, the method returns <see cref="F:System.String.Empty"/>.
+            </returns>
+        </member>
+        <member name="M:NGeoNames.Composers.BaseComposer`1.FloatToString(System.Single)">
+            <summary>
+            Converts a float value to a string with at least 1 digit after the decimal point (e.g. 1 becomes 1.0).
+            </summary>
+            <param name="value">The value to convert.</param>
+            <returns>A string representing the value.</returns>
+        </member>
+        <member name="M:NGeoNames.Composers.BaseComposer`1.DoubleToString(System.Double)">
+            <summary>
+            Converts a double value to a string with at least 1 digit after the decimal point (e.g. 1 becomes 1.0).
+            </summary>
+            <param name="value">The value to convert.</param>
+            <returns>A string representing the value.</returns>
+        </member>
+        <member name="P:NGeoNames.Composers.BaseComposer`1.Encoding">
+            <summary>
+            Gets the <see cref="P:NGeoNames.Composers.BaseComposer`1.Encoding"/> to use when writing/composing the file/stream.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Composers.BaseComposer`1.FieldSeparator">
+            <summary>
+            Gets the fieldseparator to use when writing/composing the file/stream.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Composers.Admin2CodeComposer.Compose(NGeoNames.Entities.Admin2Code)">
+            <summary>
+            Composes the specified <see cref="T:NGeoNames.Entities.Admin2Code"/> into a string.
+            </summary>
+            <param name="value">The <see cref="T:NGeoNames.Entities.Admin2Code"/> to be composed into a string.</param>
+            <returns>A string representing the specified <see cref="T:NGeoNames.Entities.Admin2Code"/>.</returns>
+        </member>
+        <member name="T:NGeoNames.Composers.AlternateNameComposer">
+            <summary>
+            Provides methods for composing a string representing an <see cref="T:NGeoNames.Entities.AlternateName"/>.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Composers.AlternateNameComposer.Compose(NGeoNames.Entities.AlternateName)">
+            <summary>
+            Composes the specified <see cref="T:NGeoNames.Entities.AlternateName"/> into a string.
+            </summary>
+            <param name="value">The <see cref="T:NGeoNames.Entities.AlternateName"/> to be composed into a string.</param>
+            <returns>A string representing the specified <see cref="T:NGeoNames.Entities.AlternateName"/>.</returns>
+        </member>
+        <member name="T:NGeoNames.Composers.ContinentComposer">
+            <summary>
+            Provides methods for composing a string representing a <see cref="T:NGeoNames.Entities.Continent"/>.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Composers.ContinentComposer.Compose(NGeoNames.Entities.Continent)">
+            <summary>
+            Composes the specified <see cref="T:NGeoNames.Entities.Continent"/> into a string.
+            </summary>
+            <param name="value">The <see cref="T:NGeoNames.Entities.Continent"/> to be composed into a string.</param>
+            <returns>A string representing the specified <see cref="T:NGeoNames.Entities.Continent"/>.</returns>
+        </member>
+        <member name="T:NGeoNames.Composers.CountryInfoComposer">
+            <summary>
+            Provides methods for composing a string representing a <see cref="T:NGeoNames.Entities.CountryInfo"/>.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Composers.CountryInfoComposer.Compose(NGeoNames.Entities.CountryInfo)">
+            <summary>
+            Composes the specified <see cref="T:NGeoNames.Entities.CountryInfo"/> into a string.
+            </summary>
+            <param name="value">The <see cref="T:NGeoNames.Entities.CountryInfo"/> to be composed into a string.</param>
+            <returns>A string representing the specified <see cref="T:NGeoNames.Entities.CountryInfo"/>.</returns>
+        </member>
+        <member name="T:NGeoNames.Composers.ExtendedGeoNameComposer">
+            <summary>
+            Provides methods for composing a string representing an <see cref="T:NGeoNames.Entities.ExtendedGeoName"/>.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Composers.ExtendedGeoNameComposer.Compose(NGeoNames.Entities.ExtendedGeoName)">
+            <summary>
+            Composes the specified <see cref="T:NGeoNames.Entities.ExtendedGeoName"/> into a string.
+            </summary>
+            <param name="value">The <see cref="T:NGeoNames.Entities.ExtendedGeoName"/> to be composed into a string.</param>
+            <returns>A string representing the specified <see cref="T:NGeoNames.Entities.ExtendedGeoName"/>.</returns>
+        </member>
+        <member name="T:NGeoNames.Composers.FeatureClassComposer">
+            <summary>
+            Provides methods for composing a string representing a <see cref="T:NGeoNames.Entities.FeatureClass"/>.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Composers.FeatureClassComposer.Compose(NGeoNames.Entities.FeatureClass)">
+            <summary>
+            Composes the specified <see cref="T:NGeoNames.Entities.FeatureClass"/> into a string.
+            </summary>
+            <param name="value">The <see cref="T:NGeoNames.Entities.FeatureClass"/> to be composed into a string.</param>
+            <returns>A string representing the specified <see cref="T:NGeoNames.Entities.FeatureClass"/>.</returns>
+        </member>
+        <member name="T:NGeoNames.Composers.FeatureCodeComposer">
+            <summary>
+            Provides methods for composing a string representing a <see cref="T:NGeoNames.Entities.FeatureCode"/>.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Composers.FeatureCodeComposer.Compose(NGeoNames.Entities.FeatureCode)">
+            <summary>
+            Composes the specified <see cref="T:NGeoNames.Entities.FeatureCode"/> into a string.
+            </summary>
+            <param name="value">The <see cref="T:NGeoNames.Entities.FeatureCode"/> to be composed into a string.</param>
+            <returns>A string representing the specified <see cref="T:NGeoNames.Entities.FeatureCode"/>.</returns>
+        </member>
+        <member name="T:NGeoNames.Composers.GeoNameComposer">
+            <summary>
+            Provides methods for composing a string representing a <see cref="T:NGeoNames.Entities.GeoName"/>.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Composers.GeoNameComposer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:NGeoNames.Composers.GeoNameComposer"/> class with default values (extended fileformat, 19 fields).
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Composers.GeoNameComposer.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:NGeoNames.Composers.GeoNameComposer"/> class with specified file format.
+            </summary>
+            <param name="useextendedfileformat">
+            When this parameter is true, the (default) file format (19 fields) will be assumed for geoname data,
+            when this parameter is false, the "compact file format" (4 fields: Id, Name, Latitude and Longitude)
+            will be assumed.
+            </param>
+        </member>
+        <member name="M:NGeoNames.Composers.GeoNameComposer.Compose(NGeoNames.Entities.GeoName)">
+            <summary>
+            Composes the specified <see cref="T:NGeoNames.Entities.GeoName"/> into a string.
+            </summary>
+            <param name="value">The <see cref="T:NGeoNames.Entities.GeoName"/> to be composed into a string.</param>
+            <returns>A string representing the specified <see cref="T:NGeoNames.Entities.GeoName"/>.</returns>
+        </member>
+        <member name="P:NGeoNames.Composers.GeoNameComposer.UseExtendedFileFormat">
+            <summary>
+            Gets wether the instance of the <see cref="T:NGeoNames.Composers.GeoNameComposer"/> uses extended fileformat (19 fields) or
+            "compact format" (4 fields: Id, Name, Latitude and Longitude).
+            </summary>
+        </member>
+        <member name="T:NGeoNames.Composers.HierarchyComposer">
+            <summary>
+            Provides methods for composing a string representing a <see cref="T:NGeoNames.Entities.HierarchyNode"/>.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Composers.HierarchyComposer.Compose(NGeoNames.Entities.HierarchyNode)">
+            <summary>
+            Composes the specified <see cref="T:NGeoNames.Entities.HierarchyNode"/> into a string.
+            </summary>
+            <param name="value">The <see cref="T:NGeoNames.Entities.HierarchyNode"/> to be composed into a string.</param>
+            <returns>A string representing the specified <see cref="T:NGeoNames.Entities.HierarchyNode"/>.</returns>
+        </member>
+        <member name="T:NGeoNames.Composers.ISOLanguageCodeComposer">
+            <summary>
+            Provides methods for composing a string representing an <see cref="T:NGeoNames.Entities.ISOLanguageCode"/>.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Composers.ISOLanguageCodeComposer.Compose(NGeoNames.Entities.ISOLanguageCode)">
+            <summary>
+            Composes the specified <see cref="T:NGeoNames.Entities.ISOLanguageCode"/> into a string.
+            </summary>
+            <param name="value">The <see cref="T:NGeoNames.Entities.ISOLanguageCode"/> to be composed into a string.</param>
+            <returns>A string representing the specified <see cref="T:NGeoNames.Entities.ISOLanguageCode"/>.</returns>
+        </member>
+        <member name="T:NGeoNames.Composers.PostalcodeComposer">
+            <summary>
+            Provides methods for composing a string representing a <see cref="T:NGeoNames.Entities.Postalcode"/>.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Composers.PostalcodeComposer.Compose(NGeoNames.Entities.Postalcode)">
+            <summary>
+            Composes the specified <see cref="T:NGeoNames.Entities.Postalcode"/> into a string.
+            </summary>
+            <param name="value">The <see cref="T:NGeoNames.Entities.Postalcode"/> to be composed into a string.</param>
+            <returns>A string representing the specified <see cref="T:NGeoNames.Entities.Postalcode"/>.</returns>
+        </member>
+        <member name="T:NGeoNames.Composers.TimeZoneComposer">
+            <summary>
+            Provides methods for composing a string representing a <see cref="T:NGeoNames.Entities.TimeZone"/>.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Composers.TimeZoneComposer.Compose(NGeoNames.Entities.TimeZone)">
+            <summary>
+            Composes the specified <see cref="T:NGeoNames.Entities.TimeZone"/> into a string.
+            </summary>
+            <param name="value">The <see cref="T:NGeoNames.Entities.TimeZone"/> to be composed into a string.</param>
+            <returns>A string representing the specified <see cref="T:NGeoNames.Entities.TimeZone"/>.</returns>
+        </member>
+        <member name="T:NGeoNames.Composers.UserTagComposer">
+            <summary>
+            Provides methods for composing a string representing a <see cref="T:NGeoNames.Entities.UserTag"/>.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Composers.UserTagComposer.Compose(NGeoNames.Entities.UserTag)">
+            <summary>
+            Composes the specified <see cref="T:NGeoNames.Entities.UserTag"/> into a string.
+            </summary>
+            <param name="value">The <see cref="T:NGeoNames.Entities.UserTag"/> to be composed into a string.</param>
+            <returns>A string representing the specified <see cref="T:NGeoNames.Entities.UserTag"/>.</returns>
+        </member>
+        <member name="T:NGeoNames.Entities.Admin2Code">
+            <summary>
+            Represents an administrative subdivision.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.Admin2Code.Code">
+            <summary>
+            Gets/sets the code of the administrative subdivision.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.Admin2Code.Name">
+            <summary>
+            Gets/sets the name of the administrative subdivision.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.Admin2Code.NameASCII">
+            <summary>
+            Gets/sets the name of the administrative subdivision in plain ASCII.
+            </summary>
+            <remarks>
+            Non-ASCII values have been found in the data; it is unfortunately (currently) *NOT* guaranteed that this
+            property contains ASCII-only strings.
+            </remarks>
+        </member>
+        <member name="P:NGeoNames.Entities.Admin2Code.GeoNameId">
+            <summary>
+            Gets/sets the geoname database Id of the administrative subdivision.
+            </summary>
+        </member>
+        <member name="T:NGeoNames.Entities.Admin1Code">
+            <summary>
+            Represents an administrative division.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.Admin1Code.Code">
+            <summary>
+            Gets/sets the code of the administrative division.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.Admin1Code.Name">
+            <summary>
+            Gets/sets the name of the administrative division.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.Admin1Code.NameASCII">
+            <summary>
+            Gets/sets the name of the administrative division in plain ASCII.
+            </summary>
+            <remarks>
+            Non-ASCII values have been found in the data; it is unfortunately (currently) *NOT* guaranteed that this
+            property contains ASCII-only strings.
+            </remarks>
+        </member>
+        <member name="P:NGeoNames.Entities.Admin1Code.GeoNameId">
+            <summary>
+            Gets/sets the geoname database Id of the administrative division.
+            </summary>
+        </member>
+        <member name="T:NGeoNames.Entities.AlternateName">
+            <summary>
+            Represents an alternate name for a specific <see cref="T:NGeoNames.Entities.GeoName"/> or <see cref="T:NGeoNames.Entities.ExtendedGeoName"/>.
+            </summary>
+            <remarks>
+            The property <see cref="P:NGeoNames.Entities.ExtendedGeoName.AlternateNames"/> of the <see cref="T:NGeoNames.Entities.ExtendedGeoName"/> object is a short
+            version of the <see cref="T:NGeoNames.Entities.AlternateName"/> data without links and postal codes but with ASCUU transliterations.
+            </remarks>
+        </member>
+        <member name="P:NGeoNames.Entities.AlternateName.Id">
+            <summary>
+            Gets/sets the Id of the <see cref="T:NGeoNames.Entities.AlternateName"/>.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.AlternateName.GeoNameId">
+            <summary>
+            Gets/sets the geoname database Id of the <see cref="T:NGeoNames.Entities.GeoName"/> or <see cref="T:NGeoNames.Entities.ExtendedGeoName"/> the
+            <see cref="T:NGeoNames.Entities.AlternateName"/> refers to.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.AlternateName.ISOLanguage">
+            <summary>
+            Gets/sets the ISO 639 language code 2- or 3-characters.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.AlternateName.Type">
+            <summary>
+            Gets/sets the type of the <see cref="T:NGeoNames.Entities.AlternateName"/>; this can be of, but is not limited to, type 'post'
+            for postal codes, 'iata', 'icao' and 'faac' for airport codes, 'fr_1793' for French Revolution names, 
+            'abbr' for abbreviation and 'link' for a website.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.AlternateName.Name">
+            <summary>
+            Gets/sets the <see cref="T:NGeoNames.Entities.AlternateName"/> or name variant or the value of the specified <see cref="P:NGeoNames.Entities.AlternateName.Type"/>.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.AlternateName.IsPreferredName">
+            <summary>
+            Gets/sets wether this <see cref="T:NGeoNames.Entities.AlternateName"/> is an official/preferred name.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.AlternateName.IsShortName">
+            <summary>
+            Gets/sets wether this <see cref="T:NGeoNames.Entities.AlternateName"/> is a short name like 'California' for 'State of California'.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.AlternateName.IsColloquial">
+            <summary>
+            Gets/sets wether this <see cref="T:NGeoNames.Entities.AlternateName"/> is a colloquial or slang term.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.AlternateName.IsHistoric">
+            <summary>
+            Gets/sets wether this <see cref="T:NGeoNames.Entities.AlternateName"/> is historic and was used in the past
+            </summary>
+        </member>
+        <member name="T:NGeoNames.Entities.Continent">
+            <summary>
+            Represents a continent.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.Continent.Code">
+            <summary>
+            Gets/sets the <see cref="T:NGeoNames.Entities.Continent"/> code.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.Continent.Name">
+            <summary>
+            Gets/sets the <see cref="T:NGeoNames.Entities.Continent"/> name.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.Continent.GeoNameId">
+            <summary>
+            Gets/sets the <see cref="T:NGeoNames.Entities.Continent"/> geoname database Id.
+            </summary>
+        </member>
+        <member name="T:NGeoNames.Entities.CountryInfo">
+            <summary>
+            Represents information about a country.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.CountryInfo.ISO_Alpha2">
+            <summary>
+            Gets/sets the ISO-3166 2-letter country code.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.CountryInfo.ISO_Alpha3">
+            <summary>
+            Gets/sets the ISO-3166 3-letter country code.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.CountryInfo.ISO_Numeric">
+            <summary>
+            Gets/sets the ISO-3166 numeric country code.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.CountryInfo.FIPS">
+            <summary>
+            Gets/sets the Federal Information Processing Standards code.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.CountryInfo.Country">
+            <summary>
+            Gets/sets the name of the country.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.CountryInfo.Capital">
+            <summary>
+            Gets/sets the capital of the country.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.CountryInfo.Area">
+            <summary>
+            Gets/sets the area in km² of the country.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.CountryInfo.Population">
+            <summary>
+            Gets/sets the population of the country.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.CountryInfo.Continent">
+            <summary>
+            Gets/sets the <see cref="P:NGeoNames.Entities.CountryInfo.Continent"/> code of the country.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.CountryInfo.Tld">
+            <summary>
+            Gets/sets the TLD (Top-Level Domain) of the country.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.CountryInfo.CurrencyCode">
+            <summary>
+            Gets/sets the currency code of the country.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.CountryInfo.CurrencyName">
+            <summary>
+            Gets/sets the currency name of the country.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.CountryInfo.Phone">
+            <summary>
+            Gets/sets the international dialing code of the country.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.CountryInfo.PostalCodeFormat">
+            <summary>
+            Gets/sets the postal code format of the country.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.CountryInfo.PostalCodeRegex">
+            <summary>
+            Gets/sets the regex to match a postal code of the country.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.CountryInfo.Languages">
+            <summary>
+            Gets/sets the associated language(s) of the country.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.CountryInfo.GeoNameId">
+            <summary>
+            Gets/sets the <see cref="T:NGeoNames.Entities.CountryInfo"/>'s geoname database Id.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.CountryInfo.Neighbours">
+            <summary>
+            Gets/sets the ISO-3166 2-letter country code(s) of the countries neighbouring the country.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.CountryInfo.EquivalentFipsCode">
+            <summary>
+            Gets/sets the Equivalent FIPS code of the country.
+            </summary>
+            <remarks>
+             A country (as defined by ISO) might not have any associated FIPS Code. It also happens that several ISO
+             countries have the same FIPS code (e.g. : Finland, and aalen island). In these cases, Finland would have
+             the original FIPS code, and aalen island would have this code as its equivalent FIPS code
+            </remarks>
+        </member>
+        <member name="T:NGeoNames.Entities.FeatureClass">
+            <summary>
+            Represents a feature class.
+            </summary>
+            <remarks>See <a href="http://www.geonames.org/export/codes.html">http://www.geonames.org/export/codes.html</a>.</remarks>
+        </member>
+        <member name="P:NGeoNames.Entities.FeatureClass.Class">
+            <summary>
+            Gets/sets the class "Id" (or "code) of the <see cref="T:NGeoNames.Entities.FeatureClass"/>.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.FeatureClass.Description">
+            <summary>
+            Gets/sets the description of the <see cref="T:NGeoNames.Entities.FeatureClass"/>.
+            </summary>
+        </member>
+        <member name="T:NGeoNames.Entities.FeatureCode">
+            <summary>
+            Represents a feature code.
+            </summary>
+            <remarks>See <a href="http://www.geonames.org/export/codes.html">http://www.geonames.org/export/codes.html</a>.</remarks>
+        </member>
+        <member name="P:NGeoNames.Entities.FeatureCode.Class">
+            <summary>
+            Gets/sets the <see cref="T:NGeoNames.Entities.FeatureClass"/> this <see cref="T:NGeoNames.Entities.FeatureCode"/> belongs to.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.FeatureCode.Code">
+            <summary>
+            Gets/sets the code of the <see cref="T:NGeoNames.Entities.FeatureCode"/>.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.FeatureCode.Name">
+            <summary>
+            Gets/sets the name of the <see cref="T:NGeoNames.Entities.FeatureCode"/>.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.FeatureCode.Description">
+            <summary>
+            Gets/sets the description of the <see cref="T:NGeoNames.Entities.FeatureCode"/>.
+            </summary>
+        </member>
+        <member name="T:NGeoNames.Entities.HierarchyNode">
+            <summary>
+            Represents information about the hierarchy of an geoname.org entity.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.HierarchyNode.ParentId">
+            <summary>
+            Gets/sets the entity's parent geoname database Id.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.HierarchyNode.ChildId">
+            <summary>
+            Gets/sets the entity's child geoname database Id.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.HierarchyNode.Type">
+            <summary>
+            Gets/sets the type.
+            </summary>
+            <remarks>
+            The type 'ADM' stands for the admin hierarchy modeled by the admin1-4 codes. The other entries are entered
+            with the geonames.org user interface. The relation toponym-adm hierarchy is not included in the file, it
+            can instead be built from the admincodes of the toponym.
+            </remarks>
+        </member>
+        <member name="T:NGeoNames.Entities.GeoName">
+            <summary>
+            Represents a ("compact") GeoName record; this class also serves as baseclass for <see cref="T:NGeoNames.Entities.ExtendedGeoName"/>.
+            </summary>
+            <seealso cref="T:NGeoNames.Entities.ExtendedGeoName"/>
+        </member>
+        <member name="T:NGeoNames.Entities.IGeoLocation">
+            <summary>
+            Defines a generalized interface to define a location by latitude/longitude.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.IGeoLocation.Latitude">
+            <summary>
+            Gets the latitude of the location.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.IGeoLocation.Longitude">
+            <summary>
+            Sets the latitude of the location.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.GeoName.Id">
+            <summary>
+            Gets/sets the record-ID in the geonames database.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.GeoName.Name">
+            <summary>
+            Gets/sets the name of geographical point.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.GeoName.Latitude">
+            <summary>
+            Gets/sets the latitude in decimal degrees.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.GeoName.Longitude">
+            <summary>
+            Gets/sets the longitude in decimal degrees.
+            </summary>
+        </member>
+        <member name="T:NGeoNames.Entities.Postalcode">
+            <summary>
+            Represents an postal code.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.Postalcode.CountryCode">
+            <summary>
+            Gets/sets the ISO-3166 2-letter country code of the <see cref="T:NGeoNames.Entities.Postalcode"/>.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.Postalcode.PostalCode">
+            <summary>
+            Gets/sets the postal code.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.Postalcode.PlaceName">
+            <summary>
+            Gets/sets the name of the place.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.Postalcode.AdminName">
+            <summary>
+            Gets/sets 1 up to 3 admin names (indexed 0 to 2) of the <see cref="T:NGeoNames.Entities.Postalcode"/>.
+            <list type="bullet">
+                <item>AdminName[0]: 1st order subdivision (state).</item>
+                <item>AdminName[1]: 2nd order subdivision (county/province).</item>
+                <item>AdminName[2]: 3rd order subdivision (community).</item>
+            </list>
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.Postalcode.AdminCode">
+            <summary>
+            Gets/sets 1 up to 3 admin codes (indexed 0 to 2) of the <see cref="T:NGeoNames.Entities.Postalcode"/>.
+            <list type="bullet">
+                <item>AdminCode[0]: 1st order subdivision (state).</item>
+                <item>AdminCode[1]: 2nd order subdivision (county/province).</item>
+                <item>AdminCode[2]: 3rd order subdivision (community).</item>
+            </list>
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.Postalcode.Latitude">
+            <summary>
+            Gets/sets the latitude in decimal degrees.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.Postalcode.Longitude">
+            <summary>
+            Gets/sets the longitude in decimal degrees.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.Postalcode.Accuracy">
+            <summary>
+            Gets/sets the accuracy of <see cref="P:NGeoNames.Entities.Postalcode.Latitude"/>/<see cref="P:NGeoNames.Entities.Postalcode.Longitude"/> from 1 = estimated to 6 = centroid.
+            </summary>
+        </member>
+        <member name="T:NGeoNames.Entities.UserTag">
+            <summary>
+            Represents information about a geoname.org entity.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.UserTag.GeoNameId">
+            <summary>
+            Gets/sets the geoname database Id the <see cref="T:NGeoNames.Entities.UserTag"/> is referring to.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.UserTag.Tag">
+            <summary>
+            Gets/sets the value of the <see cref="T:NGeoNames.Entities.UserTag"/>.
+            </summary>
+        </member>
+        <member name="T:NGeoNames.FileType">
+            <summary>
+            Specifies constants that define known (or 'supported') file types.
+            </summary>
+        </member>
+        <member name="F:NGeoNames.FileType.AutoDetect">
+            <summary>Auto detect the file type; uses the file's extension to determine filetype.</summary>
+        </member>
+        <member name="F:NGeoNames.FileType.Plain">
+            <summary>The file is a plain textfile.</summary>
+        </member>
+        <member name="F:NGeoNames.FileType.GZip">
+            <summary>The file is a GZipped textfile.</summary>
+        </member>
+        <member name="T:NGeoNames.FileUtil">
+            <summary>
+            Internal utility class.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.FileUtil.GetFileTypeFromExtension(System.String)">
+            <summary>
+            Returns the <see cref="T:NGeoNames.FileType"/> of a file by looking at the file-extension.
+            </summary>
+            <param name="path">The path of the file.</param>
+            <returns>The <see cref="T:NGeoNames.FileType"/> of the file</returns>
+        </member>
+        <member name="T:NGeoNames.Entities.GeoExtensionMethods">
+            <summary>
+            Provides geolocation related extension methods.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Entities.GeoExtensionMethods.DistanceTo(NGeoNames.Entities.IGeoLocation,System.Double,System.Double)">
+            <summary>
+            Calculates the distance from this instance to destination location (in meters).
+            </summary>
+            <param name="loc">The <see cref="T:NGeoNames.Entities.IGeoLocation"/> to apply the method to.</param>
+            <param name="lat">The latitude of the destination point.</param>
+            <param name="lng">The longitude of the destination point.</param>
+            <returns>Returns the distance, in meters, from this instance to destination.</returns>
+            <remarks>
+            Note that we use the <a href="http://en.wikipedia.org/wiki/International_System_of_Units">International
+            System of Units (SI)</a>; units of distance are specified in meters. If you want to use imperial system (e.g.
+            miles, nautical miles, yards, foot and other units) you need to convert from/to meters. You can use the
+            helper methods <see cref="M:NGeoNames.GeoUtil.MilesToMeters(System.Double)"/> / <see cref="M:NGeoNames.GeoUtil.MetersToMiles(System.Double)"/> and 
+            <see cref="M:NGeoNames.GeoUtil.YardsToMeters(System.Double)"/> / <see cref="M:NGeoNames.GeoUtil.MetersToYards(System.Double)"/> for quick conversion.
+            </remarks>
+            <seealso cref="M:NGeoNames.GeoUtil.MilesToMeters(System.Double)"/>
+            <seealso cref="M:NGeoNames.GeoUtil.MetersToMiles(System.Double)"/>
+            <seealso cref="M:NGeoNames.GeoUtil.YardsToMeters(System.Double)"/>
+            <seealso cref="M:NGeoNames.GeoUtil.MetersToYards(System.Double)"/>
+        </member>
+        <member name="M:NGeoNames.Entities.GeoExtensionMethods.DistanceTo(NGeoNames.Entities.IGeoLocation,System.Double,System.Double,System.Double)">
+            <summary>
+            Calculates the distance from this instance to destination location (in meters).
+            </summary>
+            <param name="loc">The <see cref="T:NGeoNames.Entities.IGeoLocation"/> to apply the method to.</param>
+            <param name="lat">The latitude of the destination point.</param>
+            <param name="lng">The longitude of the destination point.</param>
+            <param name="radiusofearthinmeters">The radius of the earth in meters (default: 6371000).</param>
+            <returns>Returns the distance, in meters, from this instance to destination.</returns>
+            <remarks>
+            Note that we use the <a href="http://en.wikipedia.org/wiki/International_System_of_Units">International
+            System of Units (SI)</a>; units of distance are specified in meters. If you want to use imperial system (e.g.
+            miles, nautical miles, yards, foot and other units) you need to convert from/to meters. You can use the
+            helper methods <see cref="M:NGeoNames.GeoUtil.MilesToMeters(System.Double)"/> / <see cref="M:NGeoNames.GeoUtil.MetersToMiles(System.Double)"/> and 
+            <see cref="M:NGeoNames.GeoUtil.YardsToMeters(System.Double)"/> / <see cref="M:NGeoNames.GeoUtil.MetersToYards(System.Double)"/> for quick conversion.
+            </remarks>
+            <seealso cref="M:NGeoNames.GeoUtil.MilesToMeters(System.Double)"/>
+            <seealso cref="M:NGeoNames.GeoUtil.MetersToMiles(System.Double)"/>
+            <seealso cref="M:NGeoNames.GeoUtil.YardsToMeters(System.Double)"/>
+            <seealso cref="M:NGeoNames.GeoUtil.MetersToYards(System.Double)"/>
+        </member>
+        <member name="M:NGeoNames.Entities.GeoExtensionMethods.DistanceTo(NGeoNames.Entities.IGeoLocation,NGeoNames.Entities.IGeoLocation)">
+            <summary>
+            Calculates the distance from the this instance to destination location (in meters).
+            </summary>
+            <param name="src">The <see cref="T:NGeoNames.Entities.IGeoLocation"/> to apply the method to.</param>
+            <param name="dst">The destination location.</param>
+            <returns>Returns the distance, in meters, from this instance to destination.</returns>
+            <remarks>
+            Note that we use the <a href="http://en.wikipedia.org/wiki/International_System_of_Units">International
+            System of Units (SI)</a>; units of distance are specified in meters. If you want to use imperial system (e.g.
+            miles, nautical miles, yards, foot and other units) you need to convert from/to meters. You can use the
+            helper methods <see cref="M:NGeoNames.GeoUtil.MilesToMeters(System.Double)"/> / <see cref="M:NGeoNames.GeoUtil.MetersToMiles(System.Double)"/> and 
+            <see cref="M:NGeoNames.GeoUtil.YardsToMeters(System.Double)"/> / <see cref="M:NGeoNames.GeoUtil.MetersToYards(System.Double)"/> for quick conversion.
+            </remarks>
+            <seealso cref="M:NGeoNames.GeoUtil.MilesToMeters(System.Double)"/>
+            <seealso cref="M:NGeoNames.GeoUtil.MetersToMiles(System.Double)"/>
+            <seealso cref="M:NGeoNames.GeoUtil.YardsToMeters(System.Double)"/>
+            <seealso cref="M:NGeoNames.GeoUtil.MetersToYards(System.Double)"/>
+        </member>
+        <member name="M:NGeoNames.Entities.GeoExtensionMethods.DistanceTo(NGeoNames.Entities.IGeoLocation,NGeoNames.Entities.IGeoLocation,System.Double)">
+            <summary>
+            Calculates the distance from this instance to destination location (in meters).
+            </summary>
+            <param name="src">The <see cref="T:NGeoNames.Entities.IGeoLocation"/> to apply the method to.</param>
+            <param name="dst">The destination location.</param>
+            <param name="radiusofearthinmeters">The radius of the earth in meters (default: 6371000).</param>
+            <returns>Returns the distance, in meters, from this instance to destination.</returns>
+            <remarks>
+            Note that we use the <a href="http://en.wikipedia.org/wiki/International_System_of_Units">International
+            System of Units (SI)</a>; units of distance are specified in meters. If you want to use imperial system (e.g.
+            miles, nautical miles, yards, foot and other units) you need to convert from/to meters. You can use the
+            helper methods <see cref="M:NGeoNames.GeoUtil.MilesToMeters(System.Double)"/> / <see cref="M:NGeoNames.GeoUtil.MetersToMiles(System.Double)"/> and 
+            <see cref="M:NGeoNames.GeoUtil.YardsToMeters(System.Double)"/> / <see cref="M:NGeoNames.GeoUtil.MetersToYards(System.Double)"/> for quick conversion.
+            </remarks>
+            <seealso cref="M:NGeoNames.GeoUtil.MilesToMeters(System.Double)"/>
+            <seealso cref="M:NGeoNames.GeoUtil.MetersToMiles(System.Double)"/>
+            <seealso cref="M:NGeoNames.GeoUtil.YardsToMeters(System.Double)"/>
+            <seealso cref="M:NGeoNames.GeoUtil.MetersToYards(System.Double)"/>
+        </member>
+        <member name="T:NGeoNames.GeoFileDownloader">
+            <summary>
+            Provides methods to download files from geonames.org.
+            </summary>
+            <remarks>
+            This class is, essentially, a small wrapper with some extra (specific) functionality for the
+            <see cref="T:System.Net.WebClient"/>-class. When downloading ZIP files from geonames.org it will automatically extract the
+            archives. It also handles (in a very simple manner) caching of downloaded files to prevent downloading files
+            more than desired.
+            </remarks>
+        </member>
+        <member name="F:NGeoNames.GeoFileDownloader.DEFAULTGEOFILEBASEURI">
+            <summary>
+            Gets the default URI where geonames.org export files can be found.
+            </summary>
+        </member>
+        <member name="F:NGeoNames.GeoFileDownloader.DEFAULTPOSTALCODEBASEURI">
+            <summary>
+            Gets the default URI where geonames.org postal codes files can be found.
+            </summary>
+        </member>
+        <member name="F:NGeoNames.GeoFileDownloader.USERAGENT">
+            <summary>
+            Gets the useragent string used to identify when downloading files from geonames.org.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.GeoFileDownloader.#ctor(System.Uri)">
+            <summary>
+            Initializes a new instance of the GeoFileDownloader class using the specified URI as <see cref="P:NGeoNames.GeoFileDownloader.BaseUri"/>.
+            </summary>
+            <param name="baseUri">The base URI to use when downloading files and relative paths are specified.</param>
+            <remarks>
+            The <see cref="P:NGeoNames.GeoFileDownloader.DefaultTTL"/> is 24 hours.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileDownloader.#ctor(System.Uri,System.TimeSpan)">
+            <summary>
+            Initializes a new instance of the GeoFileDownloader class using the specified URI as <see cref="P:NGeoNames.GeoFileDownloader.BaseUri"/>
+            and specified TTL.
+            </summary>
+            <param name="baseUri">The base URI to use when downloading files and relative paths are specified.</param>
+            <param name="ttl">The <see cref="P:NGeoNames.GeoFileDownloader.DefaultTTL"/> to use.</param>
+        </member>
+        <member name="M:NGeoNames.GeoFileDownloader.CreateGeoFileDownloader">
+            <summary>
+            Initializes a new instance of the GeoFileDownloader class for downloading GeoName files.
+            </summary>
+            <returns>Returns a default GeoFileDownloader intialized with the default geofiles URI as base URI.</returns>
+            <remarks>
+            The <see cref="P:NGeoNames.GeoFileDownloader.DefaultTTL"/> is 24 hours.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileDownloader.CreateGeoFileDownloader(System.TimeSpan)">
+            <summary>
+            Initializes a new instance of the GeoFileDownloader class for downloading GeoName files with the specified TTL.
+            </summary>
+            <param name="ttl">The <see cref="P:NGeoNames.GeoFileDownloader.DefaultTTL"/> to use.</param>
+            <returns>
+            Returns a default GeoFileDownloaderintialized with the default geofiles URI as base URI and with specified
+            <see cref="P:NGeoNames.GeoFileDownloader.DefaultTTL">TTL</see>.
+            </returns>
+        </member>
+        <member name="M:NGeoNames.GeoFileDownloader.CreatePostalcodeDownloader">
+            <summary>
+            Initializes a new instance of the GeoFileDownloader class for downloading postal code files.
+            </summary>
+            <returns>Returns a default GeoFileDownloader intialized with the default postalcode URI as base URI.</returns>
+            <remarks>
+            The <see cref="P:NGeoNames.GeoFileDownloader.DefaultTTL"/> is 24 hours.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileDownloader.CreatePostalcodeDownloader(System.TimeSpan)">
+            <summary>
+            Initializes a new instance of the GeoFileDownloader class for downloading postal code files with the specified TTL.
+            </summary>
+            <param name="ttl">The <see cref="P:NGeoNames.GeoFileDownloader.DefaultTTL"/> to use.</param>
+            <returns>
+            Returns a default GeoFileDownloaderintialized with the default postalcode URI as base URI and with specified
+            <see cref="P:NGeoNames.GeoFileDownloader.DefaultTTL">TTL</see>.
+            </returns>
+            <remarks>
+            The <see cref="P:NGeoNames.GeoFileDownloader.DefaultTTL"/> is 24 hours.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileDownloader.DownloadFile(System.String,System.String)">
+            <summary>
+            Downloads the specified file to the destination path using the <see cref="P:NGeoNames.GeoFileDownloader.DefaultTTL"/> to determine if an
+            existing version is still valid.
+            </summary>
+            <param name="uri">
+            The URI (either relative like "US.txt" or absolute like "http://site.tld/foo/bar/US.txt") of the file to download.
+            </param>
+            <param name="destinationpath">
+            The path where the file should be stored; this can be either a directory (e.g. d:\foo\bar\ where the original
+            filename will be used) or a filename (e.g. d:\foo\bar\myfile.txt where the original filename is ignored).
+            </param>
+            <returns>Returns the path(s) to the file(s) downloaded.</returns>
+            <remarks>
+            When a ZIP archive is downloaded the archive will automatically be extracted; this is whe this method returns
+            a string-array: there may be more than one file in the archive. This method uses the <see cref="P:NGeoNames.GeoFileDownloader.DefaultTTL"/>.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileDownloader.DownloadFile(System.Uri,System.String)">
+            <summary>
+            Downloads the specified file to the destination path using the <see cref="P:NGeoNames.GeoFileDownloader.DefaultTTL"/> to determine if an
+            existing version is still valid.
+            </summary>
+            <param name="uri">
+            The URI (either relative like "US.txt" or absolute like "http://site.tld/foo/bar/US.txt") of the file to download.
+            </param>
+            <param name="destinationpath">
+            The path where the file should be stored; this can be either a directory (e.g. d:\foo\bar\ where the original
+            filename will be used) or a filename (e.g. d:\foo\bar\myfile.txt where the original filename is ignored).
+            </param>
+            <returns>Returns the path(s) to the file(s) downloaded.</returns>
+            <remarks>
+            When a ZIP archive is downloaded the archive will automatically be extracted; this is whe this method returns
+            a string-array: there may be more than one file in the archive. This method uses the <see cref="P:NGeoNames.GeoFileDownloader.DefaultTTL"/>.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileDownloader.DownloadFileWhenOlderThan(System.String,System.String,System.TimeSpan)">
+            <summary>
+            Downloads the specified file to the destination path using the specified TTL.
+            </summary>
+            <param name="uri">
+            The URI (either relative like "US.txt" or absolute like "http://site.tld/foo/bar/US.txt") of the file to download.
+            </param>
+            <param name="destinationpath">
+            The path where the file should be stored; this can be either a directory (e.g. d:\foo\bar\ where the original
+            filename will be used) or a filename (e.g. d:\foo\bar\myfile.txt where the original filename is ignored).
+            </param>
+            <param name="ttl">
+            The TTL (Time To Live) for the file downloaded; when the TTL is expired the file will be downloaded again, if
+            not the file won't be downloaded again. To determine if the TTL has expired the file's createdate and current
+            time are used.
+            </param>
+            <returns>Returns the path(s) to the file(s) downloaded.</returns>
+            <remarks>
+            When a ZIP archive is downloaded the archive will automatically be extracted; this is whe this method returns
+            a string-array: there may be more than one file in the archive.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileDownloader.DownloadFileWhenOlderThan(System.Uri,System.String,System.TimeSpan)">
+            <summary>
+            Downloads the specified file to the destination path using the specified TTL.
+            </summary>
+            <param name="uri">
+            The URI (either relative like "US.txt" or absolute like "http://site.tld/foo/bar/US.txt") of the file to download.
+            </param>
+            <param name="destinationpath">
+            The path where the file should be stored; this can be either a directory (e.g. d:\foo\bar\ where the original
+            filename will be used) or a filename (e.g. d:\foo\bar\myfile.txt where the original filename is ignored).
+            </param>
+            <param name="ttl">
+            The TTL (Time To Live) for the file downloaded; when the TTL is expired the file will be downloaded again, if
+            not the file won't be downloaded again. To determine if the TTL has expired the file's createdate and current
+            time are used.
+            </param>
+            <returns>Returns the path(s) to the file(s) downloaded.</returns>
+            <remarks>
+            When a ZIP archive is downloaded the archive will automatically be extracted; this is whe this method returns
+            a string-array: there may be more than one file in the archive.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileDownloader.IsFileExpired(System.String,System.TimeSpan)">
+            <summary>
+            Determines if a file is 'expired' by it's TTL.
+            </summary>
+            <param name="path">The path of the file.</param>
+            <param name="ttl">The TTL for the file.</param>
+            <returns>Returns true when the file has expired it's TTL *or* the file doesn't exist; false otherwise.</returns>
+        </member>
+        <member name="M:NGeoNames.GeoFileDownloader.UnzipFiles(System.String,System.TimeSpan)">
+            <summary>
+            Extracts a ZIP archive and returns the extracted files as a string array.
+            </summary>
+            <param name="path">The path to extract to.</param>
+            <param name="ttl">The TTL for the extracted files.</param>
+            <returns>A string array of extracted files.</returns>
+            <remarks>Removes "readme"'s (these aren't extracted).</remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileDownloader.DetermineDownloadPath(System.Uri)">
+            <summary>
+            Combines relative path with <see cref="P:NGeoNames.GeoFileDownloader.BaseUri"/> to create an absolute path for downloading files.
+            </summary>
+            <param name="uri">The URI to combine with <see cref="P:NGeoNames.GeoFileDownloader.BaseUri"/> when it is relative.</param>
+            <returns>
+            Returns an absolute URI; this will be the passed in URI when it is/was absolute, otherwise it will be the
+            <see cref="P:NGeoNames.GeoFileDownloader.BaseUri"/> + passed in URI combined.
+            </returns>
+        </member>
+        <member name="P:NGeoNames.GeoFileDownloader.BaseUri">
+            <summary>
+            Gets/sets the base URI to use when downloading files and relative paths are specified.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.GeoFileDownloader.CachePolicy">
+            <summary>
+            Gets/sets the application's cache policy for any resources obtained by this GeoFileDownloader instance.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.GeoFileDownloader.Credentials">
+            <summary>
+            Gets/sets the network credentials that are sent to the host and used to authenticate the request.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.GeoFileDownloader.Proxy">
+            <summary>
+            Gets/sets the proxy used by this GeoFileDownloader object.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.GeoFileDownloader.DefaultTTL">
+            <summary>
+            Gets/sets the default 'Time To Live'; specifying how long already downloaded files are deemed 'valid' and
+            won't require actually downloading again.
+            </summary>
+        </member>
+        <member name="T:NGeoNames.GeoFileWriter">
+            <summary>
+            Provides methods to write/compose geonames.org compatible files.
+            </summary>
+        </member>
+        <member name="F:NGeoNames.GeoFileWriter.DEFAULTLINESEPARATOR">
+            <summary>
+            The default separator used by the <see cref="T:NGeoNames.GeoFileWriter"/> when writing records to a file/stream.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.GeoFileWriter.WriteRecords``1(System.String,System.Collections.Generic.IEnumerable{``0},NGeoNames.Composers.IComposer{``0},System.String)">
+            <summary>
+            Writes records of type T, using the specified composer to compose the file.
+            </summary>
+            <typeparam name="T">The type of objects to write/compose.</typeparam>
+            <param name="path">The path of the file to read/write.</param>
+            <param name="values">The values to write to the file.</param>
+            <param name="composer">The <see cref="T:NGeoNames.Composers.IComposer`1"/> to use when writing the file.</param>
+            <param name="lineseparator">The lineseparator to use (see <see cref="F:NGeoNames.GeoFileWriter.DEFAULTLINESEPARATOR"/>).</param>
+            <remarks>
+            This method will try to "autodetect" the filetype; it will 'recognize' .txt and .gz (or .*.gz) files
+            and act accordingly. If you use another extension you may want to explicitly specify the filetype
+            using the <see cref="M:NGeoNames.GeoFileWriter.WriteRecords``1(System.String,System.Collections.Generic.IEnumerable{``0},NGeoNames.Composers.IComposer{``0},NGeoNames.FileType,System.String)"/> overload.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileWriter.WriteRecords``1(System.String,System.Collections.Generic.IEnumerable{``0},NGeoNames.Composers.IComposer{``0},NGeoNames.FileType,System.String)">
+            <summary>
+            Writes records of type T, using the specified composer to compose the file.
+            </summary>
+            <typeparam name="T">The type of objects to write/compose.</typeparam>
+            <param name="path">The path of the file to read/write.</param>
+            <param name="values">The values to write to the file.</param>
+            <param name="filetype">The <see cref="T:NGeoNames.FileType"/> of the file.</param>
+            <param name="composer">The <see cref="T:NGeoNames.Composers.IComposer`1"/> to use when writing the file.</param>
+            <param name="lineseparator">The lineseparator to use (see <see cref="F:NGeoNames.GeoFileWriter.DEFAULTLINESEPARATOR"/>).</param>
+        </member>
+        <member name="M:NGeoNames.GeoFileWriter.WriteRecords``1(System.IO.Stream,System.Collections.Generic.IEnumerable{``0},NGeoNames.Composers.IComposer{``0},System.String)">
+            <summary>
+            Writes records of type T, using the specified composer to compose the file.
+            </summary>
+            <typeparam name="T">The type of objects to write/compose.</typeparam>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to write to.</param>
+            <param name="values">The values to write to the file.</param>
+            <param name="composer">The <see cref="T:NGeoNames.Composers.IComposer`1"/> to use when writing the file.</param>
+            <param name="lineseparator">The lineseparator to use (see <see cref="F:NGeoNames.GeoFileWriter.DEFAULTLINESEPARATOR"/>).</param>
+        </member>
+        <member name="M:NGeoNames.GeoFileWriter.WriteAdmin1Codes(System.String,System.Collections.Generic.IEnumerable{NGeoNames.Entities.Admin1Code})">
+            <summary>
+            Writes <see cref="T:NGeoNames.Entities.Admin1Code"/> records to the specified file, using the default <see cref="T:NGeoNames.Composers.Admin1CodeComposer"/>.
+            </summary>
+            <param name="filename">The name/path of the file.</param>
+            <param name="values">The values to write to the file.</param>
+            <remarks>
+            This static method is a convenience-method; see the WriteRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the file is written.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileWriter.WriteAdmin1Codes(System.IO.Stream,System.Collections.Generic.IEnumerable{NGeoNames.Entities.Admin1Code})">
+            <summary>
+            Writes <see cref="T:NGeoNames.Entities.Admin1Code"/> records to the <see cref="T:System.IO.Stream"/>, using the default <see cref="T:NGeoNames.Composers.Admin1CodeComposer"/>.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to write to.</param>
+            <param name="values">The values to write to the stream.</param>
+            <remarks>
+            This static method is a convenience-method; see the WriteRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the stream is written.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileWriter.WriteAdmin2Codes(System.String,System.Collections.Generic.IEnumerable{NGeoNames.Entities.Admin2Code})">
+            <summary>
+            Writes <see cref="T:NGeoNames.Entities.Admin2Code"/> records to the specified file, using the default <see cref="T:NGeoNames.Composers.Admin2CodeComposer"/>.
+            </summary>
+            <param name="filename">The name/path of the file.</param>
+            <param name="values">The values to write to the file.</param>
+            <remarks>
+            This static method is a convenience-method; see the WriteRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the file is written.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileWriter.WriteAdmin2Codes(System.IO.Stream,System.Collections.Generic.IEnumerable{NGeoNames.Entities.Admin2Code})">
+            <summary>
+            Writes <see cref="T:NGeoNames.Entities.Admin2Code"/> records to the <see cref="T:System.IO.Stream"/>, using the default <see cref="T:NGeoNames.Composers.Admin2CodeComposer"/>.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to write to.</param>
+            <param name="values">The values to write to the stream.</param>
+            <remarks>
+            This static method is a convenience-method; see the WriteRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the stream is written.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileWriter.WriteAlternateNames(System.String,System.Collections.Generic.IEnumerable{NGeoNames.Entities.AlternateName})">
+            <summary>
+            Writes <see cref="T:NGeoNames.Entities.AlternateName"/> records to the specified file, using the default <see cref="T:NGeoNames.Composers.AlternateNameComposer"/>.
+            </summary>
+            <param name="filename">The name/path of the file.</param>
+            <param name="values">The values to write to the file.</param>
+            <remarks>
+            This static method is a convenience-method; see the WriteRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the file is written.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileWriter.WriteAlternateNames(System.IO.Stream,System.Collections.Generic.IEnumerable{NGeoNames.Entities.AlternateName})">
+            <summary>
+            Writes <see cref="T:NGeoNames.Entities.AlternateName"/> records to the <see cref="T:System.IO.Stream"/>, using the default <see cref="T:NGeoNames.Composers.AlternateNameComposer"/>.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to write to.</param>
+            <param name="values">The values to write to the stream.</param>
+            <remarks>
+            This static method is a convenience-method; see the WriteRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the stream is written.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileWriter.WriteContinents(System.String,System.Collections.Generic.IEnumerable{NGeoNames.Entities.Continent})">
+            <summary>
+            Writes <see cref="T:NGeoNames.Entities.Continent"/> records to the specified file, using the default <see cref="T:NGeoNames.Composers.ContinentComposer"/>.
+            </summary>
+            <param name="filename">The name/path of the file.</param>
+            <param name="values">The values to write to the file.</param>
+            <remarks>
+            This static method is a convenience-method; see the WriteRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the file is written.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileWriter.WriteContinents(System.IO.Stream,System.Collections.Generic.IEnumerable{NGeoNames.Entities.Continent})">
+            <summary>
+            Writes <see cref="T:NGeoNames.Entities.Continent"/> records to the <see cref="T:System.IO.Stream"/>, using the default <see cref="T:NGeoNames.Composers.ContinentComposer"/>.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to write to.</param>
+            <param name="values">The values to write to the stream.</param>
+            <remarks>
+            This static method is a convenience-method; see the WriteRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the stream is written.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileWriter.WriteCountryInfo(System.String,System.Collections.Generic.IEnumerable{NGeoNames.Entities.CountryInfo})">
+            <summary>
+            Writes <see cref="T:NGeoNames.Entities.CountryInfo"/> records to the specified file, using the default <see cref="T:NGeoNames.Composers.CountryInfoComposer"/>.
+            </summary>
+            <param name="filename">The name/path of the file.</param>
+            <param name="values">The values to write to the file.</param>
+            <remarks>
+            This static method is a convenience-method; see the WriteRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the file is written.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileWriter.WriteCountryInfo(System.IO.Stream,System.Collections.Generic.IEnumerable{NGeoNames.Entities.CountryInfo})">
+            <summary>
+            Writes <see cref="T:NGeoNames.Entities.CountryInfo"/> records to the <see cref="T:System.IO.Stream"/>, using the default <see cref="T:NGeoNames.Composers.CountryInfoComposer"/>.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to write to.</param>
+            <param name="values">The values to write to the stream.</param>
+            <remarks>
+            This static method is a convenience-method; see the WriteRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the stream is written.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileWriter.WriteExtendedGeoNames(System.String,System.Collections.Generic.IEnumerable{NGeoNames.Entities.ExtendedGeoName})">
+            <summary>
+            Writes <see cref="T:NGeoNames.Entities.ExtendedGeoName"/> records to the specified file, using the default <see cref="T:NGeoNames.Composers.ExtendedGeoNameComposer"/>.
+            </summary>
+            <param name="filename">The name/path of the file.</param>
+            <param name="values">The values to write to the file.</param>
+            <remarks>
+            This static method is a convenience-method; see the WriteRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the file is written.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileWriter.WriteExtendedGeoNames(System.IO.Stream,System.Collections.Generic.IEnumerable{NGeoNames.Entities.ExtendedGeoName})">
+            <summary>
+            Writes <see cref="T:NGeoNames.Entities.ExtendedGeoName"/> records to the <see cref="T:System.IO.Stream"/>, using the default <see cref="T:NGeoNames.Composers.ExtendedGeoNameComposer"/>.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to write to.</param>
+            <param name="values">The values to write to the stream.</param>
+            <remarks>
+            This static method is a convenience-method; see the WriteRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the stream is written.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileWriter.WriteFeatureClasses(System.String,System.Collections.Generic.IEnumerable{NGeoNames.Entities.FeatureClass})">
+            <summary>
+            Writes <see cref="T:NGeoNames.Entities.FeatureClass"/> records to the specified file, using the default <see cref="T:NGeoNames.Composers.FeatureClassComposer"/>.
+            </summary>
+            <param name="filename">The name/path of the file.</param>
+            <param name="values">The values to write to the file.</param>
+            <remarks>
+            This static method is a convenience-method; see the WriteRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the file is written.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileWriter.WriteFeatureClasses(System.IO.Stream,System.Collections.Generic.IEnumerable{NGeoNames.Entities.FeatureClass})">
+            <summary>
+            Writes <see cref="T:NGeoNames.Entities.FeatureClass"/> records to the <see cref="T:System.IO.Stream"/>, using the default <see cref="T:NGeoNames.Composers.FeatureClassComposer"/>.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to write to.</param>
+            <param name="values">The values to write to the stream.</param>
+            <remarks>
+            This static method is a convenience-method; see the WriteRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the stream is written.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileWriter.WriteFeatureCodes(System.String,System.Collections.Generic.IEnumerable{NGeoNames.Entities.FeatureCode})">
+            <summary>
+            Writes <see cref="T:NGeoNames.Entities.FeatureCode"/> records to the specified file, using the default <see cref="T:NGeoNames.Composers.FeatureCodeComposer"/>.
+            </summary>
+            <param name="filename">The name/path of the file.</param>
+            <param name="values">The values to write to the file.</param>
+            <remarks>
+            This static method is a convenience-method; see the WriteRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the file is written.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileWriter.WriteFeatureCodes(System.IO.Stream,System.Collections.Generic.IEnumerable{NGeoNames.Entities.FeatureCode})">
+            <summary>
+            Writes <see cref="T:NGeoNames.Entities.FeatureCode"/> records to the <see cref="T:System.IO.Stream"/>, using the default <see cref="T:NGeoNames.Composers.FeatureCodeComposer"/>.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to write to.</param>
+            <param name="values">The values to write to the stream.</param>
+            <remarks>
+            This static method is a convenience-method; see the WriteRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the stream is written.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileWriter.WriteGeoNames(System.String,System.Collections.Generic.IEnumerable{NGeoNames.Entities.GeoName})">
+            <summary>
+            Writes <see cref="T:NGeoNames.Entities.GeoName"/> records to the specified file, using the default <see cref="T:NGeoNames.Composers.GeoNameComposer"/>.
+            </summary>
+            <param name="filename">The name/path of the file.</param>
+            <param name="values">The values to write to the file.</param>
+            <remarks>
+            This static method is a convenience-method; see the WriteRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the file is written. This method will use the default 19 field (geonames.org compatible)
+            fileformat. Use <see cref="M:NGeoNames.GeoFileWriter.WriteGeoNames(System.String,System.Collections.Generic.IEnumerable{NGeoNames.Entities.GeoName},System.Boolean)"/> if you want to use a
+            more compact 4 field format.
+            </remarks>
+            <seealso cref="M:NGeoNames.GeoFileWriter.WriteGeoNames(System.String,System.Collections.Generic.IEnumerable{NGeoNames.Entities.GeoName},System.Boolean)"/>
+        </member>
+        <member name="M:NGeoNames.GeoFileWriter.WriteGeoNames(System.IO.Stream,System.Collections.Generic.IEnumerable{NGeoNames.Entities.GeoName})">
+            <summary>
+            Writes <see cref="T:NGeoNames.Entities.GeoName"/> records to the <see cref="T:System.IO.Stream"/>, using the default <see cref="T:NGeoNames.Composers.GeoNameComposer"/>.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to write to.</param>
+            <param name="values">The values to write to the stream.</param>
+            <remarks>
+            This static method is a convenience-method; see the WriteRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the file is written. This method will use the default 19 field (geonames.org compatible)
+            fileformat. Use <see cref="M:NGeoNames.GeoFileWriter.WriteGeoNames(System.String,System.Collections.Generic.IEnumerable{NGeoNames.Entities.GeoName},System.Boolean)"/> if you want to use a
+            more compact 4 field format.
+            </remarks>
+            <seealso cref="M:NGeoNames.GeoFileWriter.WriteGeoNames(System.IO.Stream,System.Collections.Generic.IEnumerable{NGeoNames.Entities.GeoName},System.Boolean)"/>
+        </member>
+        <member name="M:NGeoNames.GeoFileWriter.WriteGeoNames(System.String,System.Collections.Generic.IEnumerable{NGeoNames.Entities.GeoName},System.Boolean)">
+            <summary>
+            Writes <see cref="T:NGeoNames.Entities.GeoName"/> records to the specified file, using the default <see cref="T:NGeoNames.Composers.GeoNameComposer"/>.
+            </summary>
+            <param name="filename">The name/path of the file.</param>
+            <param name="values">The values to write to the file.</param>
+            <param name="useextendedfileformat">
+            When true, the (default) 19 field format (geonames.org compatible) will be used, when false a more compact
+            4 field format (Id, Name, Latitude, Longitude) will be used.
+            </param>
+            <remarks>
+            This static method is a convenience-method; see the WriteRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the file is written.
+            </remarks>
+            <seealso cref="M:NGeoNames.GeoFileWriter.WriteGeoNames(System.String,System.Collections.Generic.IEnumerable{NGeoNames.Entities.GeoName})"/>
+        </member>
+        <member name="M:NGeoNames.GeoFileWriter.WriteGeoNames(System.IO.Stream,System.Collections.Generic.IEnumerable{NGeoNames.Entities.GeoName},System.Boolean)">
+            <summary>
+            Writes <see cref="T:NGeoNames.Entities.GeoName"/> records to the <see cref="T:System.IO.Stream"/>, using the default <see cref="T:NGeoNames.Composers.GeoNameComposer"/>.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to write to.</param>
+            <param name="values">The values to write to the stream.</param>
+            <param name="useextendedfileformat">
+            When true, the (default) 19 field format (geonames.org compatible) will be used, when false a more compact
+            4 field format (Id, Name, Latitude, Longitude) will be used.
+            </param>
+            <remarks>
+            This static method is a convenience-method; see the WriteRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the stream is written.
+            </remarks>
+            <seealso cref="M:NGeoNames.GeoFileWriter.WriteGeoNames(System.IO.Stream,System.Collections.Generic.IEnumerable{NGeoNames.Entities.GeoName})"/>
+        </member>
+        <member name="M:NGeoNames.GeoFileWriter.WriteHierarchy(System.String,System.Collections.Generic.IEnumerable{NGeoNames.Entities.HierarchyNode})">
+            <summary>
+            Writes <see cref="T:NGeoNames.Entities.HierarchyNode"/> records to the specified file, using the default <see cref="T:NGeoNames.Composers.HierarchyComposer"/>.
+            </summary>
+            <param name="filename">The name/path of the file.</param>
+            <param name="values">The values to write to the file.</param>
+            <remarks>
+            This static method is a convenience-method; see the WriteRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the file is written.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileWriter.WriteHierarchy(System.IO.Stream,System.Collections.Generic.IEnumerable{NGeoNames.Entities.HierarchyNode})">
+            <summary>
+            Writes <see cref="T:NGeoNames.Entities.HierarchyNode"/> records to the <see cref="T:System.IO.Stream"/>, using the default <see cref="T:NGeoNames.Composers.HierarchyComposer"/>.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to write to.</param>
+            <param name="values">The values to write to the stream.</param>
+            <remarks>
+            This static method is a convenience-method; see the WriteRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the stream is written.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileWriter.WriteISOLanguageCodes(System.String,System.Collections.Generic.IEnumerable{NGeoNames.Entities.ISOLanguageCode})">
+            <summary>
+            Writes <see cref="T:NGeoNames.Entities.ISOLanguageCode"/> records to the specified file, using the default <see cref="T:NGeoNames.Composers.ISOLanguageCodeComposer"/>.
+            </summary>
+            <param name="filename">The name/path of the file.</param>
+            <param name="values">The values to write to the file.</param>
+            <remarks>
+            This static method is a convenience-method; see the WriteRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the file is written.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileWriter.WriteISOLanguageCodes(System.IO.Stream,System.Collections.Generic.IEnumerable{NGeoNames.Entities.ISOLanguageCode})">
+            <summary>
+            Writes <see cref="T:NGeoNames.Entities.ISOLanguageCode"/> records to the <see cref="T:System.IO.Stream"/>, using the default <see cref="T:NGeoNames.Composers.ISOLanguageCodeComposer"/>.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to write to.</param>
+            <param name="values">The values to write to the stream.</param>
+            <remarks>
+            This static method is a convenience-method; see the WriteRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the stream is written.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileWriter.WriteTimeZones(System.String,System.Collections.Generic.IEnumerable{NGeoNames.Entities.TimeZone})">
+            <summary>
+            Writes <see cref="T:NGeoNames.Entities.TimeZone"/> records to the specified file, using the default <see cref="T:NGeoNames.Composers.TimeZoneComposer"/>.
+            </summary>
+            <param name="filename">The name/path of the file.</param>
+            <param name="values">The values to write to the file.</param>
+            <remarks>
+            This static method is a convenience-method; see the WriteRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the file is written.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileWriter.WriteTimeZones(System.IO.Stream,System.Collections.Generic.IEnumerable{NGeoNames.Entities.TimeZone})">
+            <summary>
+            Writes <see cref="T:NGeoNames.Entities.TimeZone"/> records to the <see cref="T:System.IO.Stream"/>, using the default <see cref="T:NGeoNames.Composers.TimeZoneComposer"/>.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to write to.</param>
+            <param name="values">The values to write to the stream.</param>
+            <remarks>
+            This static method is a convenience-method; see the WriteRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the stream is written.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileWriter.WriteUserTags(System.String,System.Collections.Generic.IEnumerable{NGeoNames.Entities.UserTag})">
+            <summary>
+            Writes <see cref="T:NGeoNames.Entities.UserTag"/> records to the specified file, using the default <see cref="T:NGeoNames.Composers.UserTagComposer"/>.
+            </summary>
+            <param name="filename">The name/path of the file.</param>
+            <param name="values">The values to write to the file.</param>
+            <remarks>
+            This static method is a convenience-method; see the WriteRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the file is written.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileWriter.WriteUserTags(System.IO.Stream,System.Collections.Generic.IEnumerable{NGeoNames.Entities.UserTag})">
+            <summary>
+            Writes <see cref="T:NGeoNames.Entities.UserTag"/> records to the <see cref="T:System.IO.Stream"/>, using the default <see cref="T:NGeoNames.Composers.UserTagComposer"/>.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to write to.</param>
+            <param name="values">The values to write to the stream.</param>
+            <remarks>
+            This static method is a convenience-method; see the WriteRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the stream is written.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileWriter.WritePostalcodes(System.String,System.Collections.Generic.IEnumerable{NGeoNames.Entities.Postalcode})">
+            <summary>
+            Writes <see cref="T:NGeoNames.Entities.Postalcode"/> records to the specified file, using the default <see cref="T:NGeoNames.Composers.PostalcodeComposer"/>.
+            </summary>
+            <param name="filename">The name/path of the file.</param>
+            <param name="values">The values to write to the file.</param>
+            <remarks>
+            This static method is a convenience-method; see the WriteRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the file is written.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileWriter.WritePostalcodes(System.IO.Stream,System.Collections.Generic.IEnumerable{NGeoNames.Entities.Postalcode})">
+            <summary>
+            Writes <see cref="T:NGeoNames.Entities.Postalcode"/> records to the <see cref="T:System.IO.Stream"/>, using the default <see cref="T:NGeoNames.Composers.PostalcodeComposer"/>.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to write to.</param>
+            <param name="values">The values to write to the stream.</param>
+            <remarks>
+            This static method is a convenience-method; see the WriteRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the stream is written.
+            </remarks>
+        </member>
+        <member name="T:NGeoNames.GeoUtil">
+            <summary>
+            Utility class.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.GeoUtil.Deg2Rad(System.Double)">
+            <summary>
+            Converts degrees to radians.
+            </summary>
+            <param name="deg">Degrees.</param>
+            <returns>Radians.</returns>
+        </member>
+        <member name="M:NGeoNames.GeoUtil.DistanceTo(NGeoNames.Entities.IGeoLocation,NGeoNames.Entities.IGeoLocation,System.Double)">
+            <summary>
+            Calculates the distance from the source to destination location (in meters).
+            </summary>
+            <param name="src">The source location.</param>
+            <param name="dest">The destination location.</param>
+            <param name="radiusofearth">The radius of the earth in meters (default: 6371000).</param>
+            <returns>Returns the distance, in meters, from source to destination.</returns>
+            <remarks>
+            Note that we use the <a href="http://en.wikipedia.org/wiki/International_System_of_Units">International
+            System of Units (SI)</a>; units of distance are specified in meters. If you want to use imperial system (e.g.
+            miles, nautical miles, yards, foot and whathaveyou's) you need to convert from/to meters. You can use the
+            helper methods <see cref="M:NGeoNames.GeoUtil.MilesToMeters(System.Double)"/> / <see cref="M:NGeoNames.GeoUtil.MetersToMiles(System.Double)"/> and 
+            <see cref="M:NGeoNames.GeoUtil.YardsToMeters(System.Double)"/> / <see cref="M:NGeoNames.GeoUtil.MetersToYards(System.Double)"/> for quick conversion.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoUtil.GetCoord(NGeoNames.Entities.IGeoLocation,System.Double)">
+            <summary>
+            Calculates a coordinate from a GeoName (latitude, longitude, altitude)
+            </summary>
+            <param name="n">The GeoName to determine the coordinate for.</param>
+            <param name="radiusofearth">Radius of the earth, in meters.</param>
+            <returns>Returns a coordinate (represented as an array of 3 doubles).</returns>
+            <remarks>This method is for internal use (for the KdTree) only.</remarks>
+        </member>
+        <member name="M:NGeoNames.GeoUtil.MetersToMiles(System.Double)">
+            <summary>
+            Converts meters to miles
+            </summary>
+            <param name="meters">The number of meters to convert to miles.</param>
+            <returns>Returns the number of miles.</returns>
+        </member>
+        <member name="M:NGeoNames.GeoUtil.MilesToMeters(System.Double)">
+            <summary>
+            Converts miles to meters
+            </summary>
+            <param name="miles">The number of miles to convert to meters.</param>
+            <returns>Returns the number of meters.</returns>
+        </member>
+        <member name="M:NGeoNames.GeoUtil.MetersToYards(System.Double)">
+            <summary>
+            Converts meters to yards
+            </summary>
+            <param name="meters">The number of meters to convert to yards.</param>
+            <returns>Returns the number of yards.</returns>
+        </member>
+        <member name="M:NGeoNames.GeoUtil.YardsToMeters(System.Double)">
+            <summary>
+            Converts yards to meters
+            </summary>
+            <param name="yards">The number of yards to convert to meters.</param>
+            <returns>Returns the number of meters.</returns>
+        </member>
+        <member name="T:NGeoNames.Parsers.ParserException">
+            <summary>
+            The exception that is thrown when parsing an object from supplied data fails.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Parsers.ParserException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:NGeoNames.Parsers.ParserException"/> class with a specified error message.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="T:NGeoNames.Parsers.Admin1CodeParser">
+            <summary>
+            Provides methods for parsing an <see cref="T:NGeoNames.Entities.Admin1Code"/> object from a string-array.
+            </summary>
+        </member>
+        <member name="T:NGeoNames.Parsers.BaseParser`1">
+            <summary>
+            Provides an (abstract) baseclass for parsers.
+            </summary>
+            <typeparam name="T">The type of objects to parse.</typeparam>
+        </member>
+        <member name="T:NGeoNames.Parsers.IParser`1">
+            <summary>
+            Defines a generalized parser to parse geoname.org files of a specific type.
+            </summary>
+            <typeparam name="T">The type of objects to parse.</typeparam>
+        </member>
+        <member name="M:NGeoNames.Parsers.IParser`1.Parse(System.String[])">
+            <summary>
+            Parses the specified fields into an object of type T.
+            </summary>
+            <param name="fields">The fields to be parsed.</param>
+            <returns>An object of type T parsed from the file/stream.</returns>
+        </member>
+        <member name="P:NGeoNames.Parsers.IParser`1.HasComments">
+            <summary>
+            Gets wether the file/stream has (or is expected to have) comments (lines starting with "#").
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.IParser`1.SkipLines">
+            <summary>
+            Gets the number of lines to skip when parsing the file/stream (e.g. 'headers' etc.).
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.IParser`1.ExpectedNumberOfFields">
+            <summary>
+            Gets the number of fields the file/stream is expected to have; anything else will cause a <see cref="T:NGeoNames.Parsers.ParserException"/>.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.IParser`1.Encoding">
+            <summary>
+            Gets the <see cref="P:NGeoNames.Parsers.IParser`1.Encoding"/> to use when reading/parsing the file/stream.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.IParser`1.FieldSeparators">
+            <summary>
+            Gets an array of chars that define one or more fieldseparators.
+            </summary>
+        </member>
+        <member name="F:NGeoNames.Parsers.BaseParser`1.DEFAULTFIELDSEPARATORS">
+            <summary>
+            Defines the default fieldseparator(s) (default: \t).
+            </summary>
+        </member>
+        <member name="F:NGeoNames.Parsers.BaseParser`1.DEFAULTENCODING">
+            <summary>
+            Defines the default <see cref="P:NGeoNames.Parsers.BaseParser`1.Encoding"/> (default: UTF8).
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Parsers.BaseParser`1.Parse(System.String[])">
+            <summary>
+            Parses the specified fields into an object of type T.
+            </summary>
+            <param name="fields">The fields to be parsed.</param>
+            <returns>An object of type T parsed from the file/stream.</returns>
+        </member>
+        <member name="M:NGeoNames.Parsers.BaseParser`1.#ctor">
+            <summary>
+            Initializes a parser with <see cref="F:NGeoNames.Parsers.BaseParser`1.DEFAULTENCODING"/> and <see cref="F:NGeoNames.Parsers.BaseParser`1.DEFAULTFIELDSEPARATORS"/>.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Parsers.BaseParser`1.#ctor(System.Text.Encoding,System.Char[])">
+            <summary>
+            Initializes a parser with the specified <see cref="P:NGeoNames.Parsers.BaseParser`1.Encoding"/> and fieldseparator(s).
+            </summary>
+            <param name="encoding"><see cref="P:NGeoNames.Parsers.BaseParser`1.Encoding"/> the parser will use.</param>
+            <param name="fieldseparators">Field separator(s) to use when parsing the file/stream.</param>
+        </member>
+        <member name="P:NGeoNames.Parsers.BaseParser`1.Encoding">
+            <summary>
+            Gets the <see cref="P:NGeoNames.Parsers.BaseParser`1.Encoding"/> to use when reading/parsing the file/stream.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.BaseParser`1.FieldSeparators">
+            <summary>
+            Gets an array of chars that define one or more fieldseparators.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.BaseParser`1.HasComments">
+            <summary>
+            Gets wether the file/stream has (or is expected to have) comments (lines starting with "#").
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.BaseParser`1.SkipLines">
+            <summary>
+            Gets the number of lines to skip when parsing the file/stream (e.g. 'headers' etc.).
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.BaseParser`1.ExpectedNumberOfFields">
+            <summary>
+            Gets the number of fields the file/stream is expected to have; anything else will cause a <see cref="T:NGeoNames.Parsers.ParserException"/>.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Parsers.Admin1CodeParser.Parse(System.String[])">
+            <summary>
+            Parses the specified data into an <see cref="T:NGeoNames.Entities.Admin1Code"/> object.
+            </summary>
+            <param name="fields">The fields/data representing an <see cref="T:NGeoNames.Entities.Admin1Code"/> to parse.</param>
+            <returns>Returns a new <see cref="T:NGeoNames.Entities.Admin1Code"/> object.</returns>
+        </member>
+        <member name="P:NGeoNames.Parsers.Admin1CodeParser.HasComments">
+            <summary>
+            Gets wether the file/stream has (or is expected to have) comments (lines starting with "#").
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.Admin1CodeParser.SkipLines">
+            <summary>
+            Gets the number of lines to skip when parsing the file/stream (e.g. 'headers' etc.).
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.Admin1CodeParser.ExpectedNumberOfFields">
+            <summary>
+            Gets the number of fields the file/stream is expected to have; anything else will cause a <see cref="T:NGeoNames.Parsers.ParserException"/>.
+            </summary>
+        </member>
+        <member name="T:NGeoNames.Parsers.Admin2CodeParser">
+            <summary>
+            Provides methods for parsing an <see cref="T:NGeoNames.Entities.Admin2Code"/> object from a string-array.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Parsers.Admin2CodeParser.Parse(System.String[])">
+            <summary>
+            Parses the specified data into an <see cref="T:NGeoNames.Entities.Admin2Code"/> object.
+            </summary>
+            <param name="fields">The fields/data representing an <see cref="T:NGeoNames.Entities.Admin2Code"/> to parse.</param>
+            <returns>Returns a new <see cref="T:NGeoNames.Entities.Admin2Code"/> object.</returns>
+        </member>
+        <member name="P:NGeoNames.Parsers.Admin2CodeParser.HasComments">
+            <summary>
+            Gets wether the file/stream has (or is expected to have) comments (lines starting with "#").
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.Admin2CodeParser.SkipLines">
+            <summary>
+            Gets the number of lines to skip when parsing the file/stream (e.g. 'headers' etc.).
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.Admin2CodeParser.ExpectedNumberOfFields">
+            <summary>
+            Gets the number of fields the file/stream is expected to have; anything else will cause a <see cref="T:NGeoNames.Parsers.ParserException"/>.
+            </summary>
+        </member>
+        <member name="T:NGeoNames.Parsers.AlternateNameParser">
+            <summary>
+            Provides methods for parsing an <see cref="T:NGeoNames.Entities.AlternateName"/> object from a string-array.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Parsers.AlternateNameParser.Parse(System.String[])">
+            <summary>
+            Parses the specified data into an <see cref="T:NGeoNames.Entities.AlternateName"/> object.
+            </summary>
+            <param name="fields">The fields/data representing an <see cref="T:NGeoNames.Entities.AlternateName"/> to parse.</param>
+            <returns>Returns a new <see cref="T:NGeoNames.Entities.AlternateName"/> object.</returns>
+        </member>
+        <member name="P:NGeoNames.Parsers.AlternateNameParser.HasComments">
+            <summary>
+            Gets wether the file/stream has (or is expected to have) comments (lines starting with "#").
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.AlternateNameParser.SkipLines">
+            <summary>
+            Gets the number of lines to skip when parsing the file/stream (e.g. 'headers' etc.).
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.AlternateNameParser.ExpectedNumberOfFields">
+            <summary>
+            Gets the number of fields the file/stream is expected to have; anything else will cause a <see cref="T:NGeoNames.Parsers.ParserException"/>.
+            </summary>
+        </member>
+        <member name="T:NGeoNames.GeoFileReader">
+            <summary>
+            Provides methods to read/parse files from geonames.org.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadRecords``1(System.String,NGeoNames.Parsers.IParser{``0})">
+            <summary>
+            Reads records of type T, using the specified parser to parse the values.
+            </summary>
+            <typeparam name="T">The type of objects to read/parse.</typeparam>
+            <param name="path">The path of the file to read/parse.</param>
+            <param name="parser">The <see cref="T:NGeoNames.Parsers.IParser`1"/> to use when reading the file.</param>
+            <returns>Returns an IEnumerable of T representing the records read/parsed.</returns>
+            <remarks>
+            This method will try to "autodetect" the filetype; it will 'recognize' .txt and .gz (or .*.gz) files
+            and act accordingly. If you use another extension you may want to explicitly specify the filetype
+            using the <see cref="M:NGeoNames.GeoFileReader.ReadRecords``1(System.String,NGeoNames.FileType,NGeoNames.Parsers.IParser{``0})"/> overload.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadRecords``1(System.String,NGeoNames.FileType,NGeoNames.Parsers.IParser{``0})">
+            <summary>
+            Reads records of type T, using the specified parser to parse the values.
+            </summary>
+            <typeparam name="T">The type of objects to read/parse.</typeparam>
+            <param name="path">The path of the file to read/parse.</param>
+            <param name="filetype">The <see cref="T:NGeoNames.FileType"/> of the file.</param>
+            <param name="parser">The <see cref="T:NGeoNames.Parsers.IParser`1"/> to use when reading the file.</param>
+            <returns>Returns an IEnumerable of T representing the records read/parsed.</returns>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadRecords``1(System.IO.Stream,NGeoNames.Parsers.IParser{``0})">
+            <summary>
+            Reads records of type T, using the specified parser to parse the values.
+            </summary>
+            <typeparam name="T">The type of objects to read/parse.</typeparam>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to read/parse.</param>
+            <param name="parser">The <see cref="T:NGeoNames.Parsers.IParser`1"/> to use when reading the file.</param>
+            <returns>Returns an IEnumerable of T representing the records read/parsed.</returns>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadExtendedGeoNames(System.String)">
+            <summary>
+            Reads <see cref="T:NGeoNames.Entities.ExtendedGeoName"/> records from the specified file, using the default <see cref="T:NGeoNames.Parsers.ExtendedGeoNameParser"/>.
+            </summary>
+            <param name="filename">The name/path of the file.</param>
+            <returns>Returns an IEnumerable of <see cref="T:NGeoNames.Entities.ExtendedGeoName"/> representing the records read/parsed.</returns>
+            <remarks>
+            This static method is a convenience-method; see the ReadRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the file is read.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadExtendedGeoNames(System.IO.Stream)">
+            <summary>
+            Reads <see cref="T:NGeoNames.Entities.ExtendedGeoName"/> records from the <see cref="T:System.IO.Stream"/>, using the default <see cref="T:NGeoNames.Parsers.ExtendedGeoNameParser"/>.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to read/parse.</param>
+            <returns>Returns an IEnumerable of <see cref="T:NGeoNames.Entities.ExtendedGeoName"/> representing the records read/parsed.</returns>
+            <remarks>
+            This static method is a convenience-method; see the ReadRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the stream is read.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadGeoNames(System.String)">
+            <summary>
+            Reads <see cref="T:NGeoNames.Entities.GeoName"/> records from the specified file, using the default <see cref="T:NGeoNames.Parsers.GeoNameParser"/>.
+            </summary>
+            <param name="filename">The name/path of the file.</param>
+            <returns>Returns an IEnumerable of <see cref="T:NGeoNames.Entities.GeoName"/> representing the records read/parsed.</returns>
+            <remarks>
+            This static method is a convenience-method; see the ReadRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the file is read.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadGeoNames(System.IO.Stream)">
+            <summary>
+            Reads <see cref="T:NGeoNames.Entities.GeoName"/> records from the <see cref="T:System.IO.Stream"/>, using the default <see cref="T:NGeoNames.Parsers.GeoNameParser"/>.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to read/parse.</param>
+            <returns>Returns an IEnumerable of <see cref="T:NGeoNames.Entities.GeoName"/> representing the records read/parsed.</returns>
+            <remarks>
+            This static method is a convenience-method; see the ReadRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the stream is read.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadGeoNames(System.String,System.Boolean)">
+            <summary>
+            Reads <see cref="T:NGeoNames.Entities.GeoName"/> records from the specified file, using the default <see cref="T:NGeoNames.Parsers.GeoNameParser"/>.
+            </summary>
+            <param name="filename">The name/path of the file.</param>
+            <param name="useextendedfileformat">
+            When this parameter is true (default) the 19 field format (default geonames.org file format) is assumed,
+            when this parameter is false a custom 4 field format (containing only Id, Name, Latitude and Longitude)
+            will be used.
+            </param>
+            <returns>Returns an IEnumerable of <see cref="T:NGeoNames.Entities.GeoName"/> representing the records read/parsed.</returns>
+            <remarks>
+            This static method is a convenience-method; see the ReadRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the file is read.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadGeoNames(System.IO.Stream,System.Boolean)">
+            <summary>
+            Reads <see cref="T:NGeoNames.Entities.GeoName"/> records from the <see cref="T:System.IO.Stream"/>, using the default <see cref="T:NGeoNames.Parsers.GeoNameParser"/>.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to read/parse.</param>
+            <param name="useextendedfileformat">
+            When this parameter is true (default) the 19 field format (default geonames.org file format) is assumed,
+            when this parameter is false a custom 4 field format (containing only Id, Name, Latitude and Longitude)
+            will be used.
+            </param>
+            <returns>Returns an IEnumerable of <see cref="T:NGeoNames.Entities.GeoName"/> representing the records read/parsed.</returns>
+            <remarks>
+            This static method is a convenience-method; see the ReadRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the stream is read.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadAdmin1Codes(System.String)">
+            <summary>
+            Reads <see cref="T:NGeoNames.Entities.Admin1Code"/> records from the specified file, using the default <see cref="T:NGeoNames.Parsers.Admin1CodeParser"/>.
+            </summary>
+            <param name="filename">The name/path of the file.</param>
+            <returns>Returns an IEnumerable of <see cref="T:NGeoNames.Entities.Admin1Code"/> representing the records read/parsed.</returns>
+            <remarks>
+            This static method is a convenience-method; see the ReadRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the file is read.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadAdmin1Codes(System.IO.Stream)">
+            <summary>
+            Reads <see cref="T:NGeoNames.Entities.Admin1Code"/> records from the <see cref="T:System.IO.Stream"/>, using the default <see cref="T:NGeoNames.Parsers.Admin1CodeParser"/>.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to read/parse.</param>
+            <returns>Returns an IEnumerable of <see cref="T:NGeoNames.Entities.Admin1Code"/> representing the records read/parsed.</returns>
+            <remarks>
+            This static method is a convenience-method; see the ReadRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the stream is read.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadAdmin2Codes(System.String)">
+            <summary>
+            Reads <see cref="T:NGeoNames.Entities.Admin2Code"/> records from the specified file, using the default <see cref="T:NGeoNames.Parsers.Admin2CodeParser"/>.
+            </summary>
+            <param name="filename">The name/path of the file.</param>
+            <returns>Returns an IEnumerable of <see cref="T:NGeoNames.Entities.Admin2Code"/> representing the records read/parsed.</returns>
+            <remarks>
+            This static method is a convenience-method; see the ReadRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the file is read.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadAdmin2Codes(System.IO.Stream)">
+            <summary>
+            Reads <see cref="T:NGeoNames.Entities.Admin2Code"/> records from the <see cref="T:System.IO.Stream"/>, using the default <see cref="T:NGeoNames.Parsers.Admin2CodeParser"/>.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to read/parse.</param>
+            <returns>Returns an IEnumerable of <see cref="T:NGeoNames.Entities.Admin2Code"/> representing the records read/parsed.</returns>
+            <remarks>
+            This static method is a convenience-method; see the ReadRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the stream is read.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadAlternateNames(System.String)">
+            <summary>
+            Reads <see cref="T:NGeoNames.Entities.AlternateName"/> records from the specified file, using the default <see cref="T:NGeoNames.Parsers.AlternateNameParser"/>.
+            </summary>
+            <param name="filename">The name/path of the file.</param>
+            <returns>Returns an IEnumerable of <see cref="T:NGeoNames.Entities.AlternateName"/> representing the records read/parsed.</returns>
+            <remarks>
+            This static method is a convenience-method; see the ReadRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the file is read.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadAlternateNames(System.IO.Stream)">
+            <summary>
+            Reads <see cref="T:NGeoNames.Entities.AlternateName"/> records from the <see cref="T:System.IO.Stream"/>, using the default <see cref="T:NGeoNames.Parsers.AlternateNameParser"/>.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to read/parse.</param>
+            <returns>Returns an IEnumerable of <see cref="T:NGeoNames.Entities.AlternateName"/> representing the records read/parsed.</returns>
+            <remarks>
+            This static method is a convenience-method; see the ReadRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the stream is read.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadBuiltInContinents">
+            <summary>
+            Reads <see cref="T:NGeoNames.Entities.Continent"/> records from the built-in data, using the default <see cref="T:NGeoNames.Parsers.ContinentParser"/>.
+            </summary>
+            <returns>Returns an IEnumerable of <see cref="T:NGeoNames.Entities.Continent"/> representing the records read/parsed.</returns>
+            <remarks>
+            Geonames.org doesn't provide a file for continents; you can provide your own file (see
+            <see cref="M:NGeoNames.GeoFileReader.ReadContinents(System.String)"/> or <see cref="M:NGeoNames.GeoFileReader.ReadContinents(System.IO.Stream)"/>) or use the built-in
+            values provided by this method.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadContinents(System.String)">
+            <summary>
+            Reads <see cref="T:NGeoNames.Entities.Continent"/> records from the specified file, using the default <see cref="T:NGeoNames.Parsers.ContinentParser"/>.
+            </summary>
+            <param name="filename">The name/path of the file.</param>
+            <returns>Returns an IEnumerable of <see cref="T:NGeoNames.Entities.Continent"/> representing the records read/parsed.</returns>
+            <remarks>
+            This static method is a convenience-method; see the ReadRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the file is read.
+            </remarks>
+            <seealso cref="M:NGeoNames.GeoFileReader.ReadBuiltInContinents"/>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadContinents(System.IO.Stream)">
+            <summary>
+            Reads <see cref="T:NGeoNames.Entities.Continent"/> records from the <see cref="T:System.IO.Stream"/>, using the default <see cref="T:NGeoNames.Parsers.ContinentParser"/>.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to read/parse.</param>
+            <returns>Returns an IEnumerable of <see cref="T:NGeoNames.Entities.Continent"/> representing the records read/parsed.</returns>
+            <remarks>
+            This static method is a convenience-method; see the ReadRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the stream is read.
+            </remarks>
+            <seealso cref="M:NGeoNames.GeoFileReader.ReadBuiltInContinents"/>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadCountryInfo(System.String)">
+            <summary>
+            Reads <see cref="T:NGeoNames.Entities.CountryInfo"/> records from the specified file, using the default <see cref="T:NGeoNames.Parsers.CountryInfoParser"/>.
+            </summary>
+            <param name="filename">The name/path of the file.</param>
+            <returns>Returns an IEnumerable of <see cref="T:NGeoNames.Entities.CountryInfo"/> representing the records read/parsed.</returns>
+            <remarks>
+            This static method is a convenience-method; see the ReadRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the file is read.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadCountryInfo(System.IO.Stream)">
+            <summary>
+            Reads <see cref="T:NGeoNames.Entities.CountryInfo"/> records from the <see cref="T:System.IO.Stream"/>, using the default <see cref="T:NGeoNames.Parsers.CountryInfoParser"/>.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to read/parse.</param>
+            <returns>Returns an IEnumerable of <see cref="T:NGeoNames.Entities.CountryInfo"/> representing the records read/parsed.</returns>
+            <remarks>
+            This static method is a convenience-method; see the ReadRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the stream is read.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadBuiltInFeatureClasses">
+            <summary>
+            Reads <see cref="T:NGeoNames.Entities.FeatureClass"/> records from the built-in data, using the default <see cref="T:NGeoNames.Parsers.FeatureClassParser"/>.
+            </summary>
+            <returns>Returns an IEnumerable of <see cref="T:NGeoNames.Entities.FeatureClass"/> representing the records read/parsed.</returns>
+            <remarks>
+            Geonames.org doesn't provide a file for featueclasses; you can provide your own file (see
+            <see cref="M:NGeoNames.GeoFileReader.ReadFeatureClasses(System.String)"/> or <see cref="M:NGeoNames.GeoFileReader.ReadFeatureClasses(System.IO.Stream)"/>) or use the built-in
+            values provided by this method.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadFeatureClasses(System.String)">
+            <summary>
+            Reads <see cref="T:NGeoNames.Entities.FeatureClass"/> records from the specified file, using the default <see cref="T:NGeoNames.Parsers.FeatureClassParser"/>.
+            </summary>
+            <param name="filename">The name/path of the file.</param>
+            <returns>Returns an IEnumerable of <see cref="T:NGeoNames.Entities.FeatureClass"/> representing the records read/parsed.</returns>
+            <remarks>
+            This static method is a convenience-method; see the ReadRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the file is read.
+            </remarks>
+            <seealso cref="M:NGeoNames.GeoFileReader.ReadBuiltInFeatureClasses"/>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadFeatureClasses(System.IO.Stream)">
+            <summary>
+            Reads <see cref="T:NGeoNames.Entities.FeatureClass"/> records from the <see cref="T:System.IO.Stream"/>, using the default <see cref="T:NGeoNames.Parsers.FeatureClassParser"/>.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to read/parse.</param>
+            <returns>Returns an IEnumerable of <see cref="T:NGeoNames.Entities.FeatureClass"/> representing the records read/parsed.</returns>
+            <remarks>
+            This static method is a convenience-method; see the ReadRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the stream is read.
+            </remarks>
+            <seealso cref="M:NGeoNames.GeoFileReader.ReadBuiltInFeatureClasses"/>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadFeatureCodes(System.String)">
+            <summary>
+            Reads <see cref="T:NGeoNames.Entities.FeatureCode"/> records from the specified file, using the default <see cref="T:NGeoNames.Parsers.FeatureCodeParser"/>.
+            </summary>
+            <param name="filename">The name/path of the file.</param>
+            <returns>Returns an IEnumerable of <see cref="T:NGeoNames.Entities.FeatureCode"/> representing the records read/parsed.</returns>
+            <remarks>
+            This static method is a convenience-method; see the ReadRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the file is read.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadFeatureCodes(System.IO.Stream)">
+            <summary>
+            Reads <see cref="T:NGeoNames.Entities.FeatureCode"/> records from the <see cref="T:System.IO.Stream"/>, using the default <see cref="T:NGeoNames.Parsers.FeatureCodeParser"/>.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to read/parse.</param>
+            <returns>Returns an IEnumerable of <see cref="T:NGeoNames.Entities.FeatureCode"/> representing the records read/parsed.</returns>
+            <remarks>
+            This static method is a convenience-method; see the ReadRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the stream is read.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadHierarchy(System.String)">
+            <summary>
+            Reads <see cref="T:NGeoNames.Entities.HierarchyNode"/> records from the specified file, using the default <see cref="T:NGeoNames.Parsers.HierarchyParser"/>.
+            </summary>
+            <param name="filename">The name/path of the file.</param>
+            <returns>Returns an IEnumerable of <see cref="T:NGeoNames.Entities.HierarchyNode"/> representing the records read/parsed.</returns>
+            <remarks>
+            This static method is a convenience-method; see the ReadRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the file is read.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadHierarchy(System.IO.Stream)">
+            <summary>
+            Reads <see cref="T:NGeoNames.Entities.HierarchyNode"/> records from the <see cref="T:System.IO.Stream"/>, using the default <see cref="T:NGeoNames.Parsers.HierarchyParser"/>.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to read/parse.</param>
+            <returns>Returns an IEnumerable of <see cref="T:NGeoNames.Entities.HierarchyNode"/> representing the records read/parsed.</returns>
+            <remarks>
+            This static method is a convenience-method; see the ReadRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the stream is read.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadISOLanguageCodes(System.String)">
+            <summary>
+            Reads <see cref="T:NGeoNames.Entities.ISOLanguageCode"/> records from the specified file, using the default <see cref="T:NGeoNames.Parsers.ISOLanguageCodeParser"/>.
+            </summary>
+            <param name="filename">The name/path of the file.</param>
+            <returns>Returns an IEnumerable of <see cref="T:NGeoNames.Entities.ISOLanguageCode"/> representing the records read/parsed.</returns>
+            <remarks>
+            This static method is a convenience-method; see the ReadRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the file is read.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadISOLanguageCodes(System.IO.Stream)">
+            <summary>
+            Reads <see cref="T:NGeoNames.Entities.ISOLanguageCode"/> records from the <see cref="T:System.IO.Stream"/>, using the default <see cref="T:NGeoNames.Parsers.ISOLanguageCodeParser"/>.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to read/parse.</param>
+            <returns>Returns an IEnumerable of <see cref="T:NGeoNames.Entities.ISOLanguageCode"/> representing the records read/parsed.</returns>
+            <remarks>
+            This static method is a convenience-method; see the ReadRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the stream is read.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadTimeZones(System.String)">
+            <summary>
+            Reads <see cref="T:NGeoNames.Entities.TimeZone"/> records from the specified file, using the default <see cref="T:NGeoNames.Parsers.TimeZoneParser"/>.
+            </summary>
+            <param name="filename">The name/path of the file.</param>
+            <returns>Returns an IEnumerable of <see cref="T:NGeoNames.Entities.TimeZone"/> representing the records read/parsed.</returns>
+            <remarks>
+            This static method is a convenience-method; see the ReadRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the file is read.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadTimeZones(System.IO.Stream)">
+            <summary>
+            Reads <see cref="T:NGeoNames.Entities.TimeZone"/> records from the <see cref="T:System.IO.Stream"/>, using the default <see cref="T:NGeoNames.Parsers.TimeZoneParser"/>.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to read/parse.</param>
+            <returns>Returns an IEnumerable of <see cref="T:NGeoNames.Entities.TimeZone"/> representing the records read/parsed.</returns>
+            <remarks>
+            This static method is a convenience-method; see the ReadRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the stream is read.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadUserTags(System.String)">
+            <summary>
+            Reads <see cref="T:NGeoNames.Entities.UserTag"/> records from the specified file, using the default <see cref="T:NGeoNames.Parsers.UserTagParser"/>.
+            </summary>
+            <param name="filename">The name/path of the file.</param>
+            <returns>Returns an IEnumerable of <see cref="T:NGeoNames.Entities.UserTag"/> representing the records read/parsed.</returns>
+            <remarks>
+            This static method is a convenience-method; see the ReadRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the file is read.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadUserTags(System.IO.Stream)">
+            <summary>
+            Reads <see cref="T:NGeoNames.Entities.UserTag"/> records from the <see cref="T:System.IO.Stream"/>, using the default <see cref="T:NGeoNames.Parsers.UserTagParser"/>.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to read/parse.</param>
+            <returns>Returns an IEnumerable of <see cref="T:NGeoNames.Entities.UserTag"/> representing the records read/parsed.</returns>
+            <remarks>
+            This static method is a convenience-method; see the ReadRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the stream is read.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadPostalcodes(System.String)">
+            <summary>
+            Reads <see cref="T:NGeoNames.Entities.Postalcode"/> records from the specified file, using the default <see cref="T:NGeoNames.Parsers.PostalcodeParser"/>.
+            </summary>
+            <param name="filename">The name/path of the file.</param>
+            <returns>Returns an IEnumerable of <see cref="T:NGeoNames.Entities.Postalcode"/> representing the records read/parsed.</returns>
+            <remarks>
+            This static method is a convenience-method; see the ReadRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the file is read.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.GeoFileReader.ReadPostalcodes(System.IO.Stream)">
+            <summary>
+            Reads <see cref="T:NGeoNames.Entities.Postalcode"/> records from the <see cref="T:System.IO.Stream"/>, using the default <see cref="T:NGeoNames.Parsers.PostalcodeParser"/>.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> to read/parse.</param>
+            <returns>Returns an IEnumerable of <see cref="T:NGeoNames.Entities.Postalcode"/> representing the records read/parsed.</returns>
+            <remarks>
+            This static method is a convenience-method; see the ReadRecords&lt;T&gt; overloaded instance-methods for
+            more control over how the stream is read.
+            </remarks>
+        </member>
+        <member name="T:NGeoNames.Entities.ExtendedGeoName">
+            <summary>
+            Represents a GeoName record with all data represented.
+            </summary>
+            <seealso cref="T:NGeoNames.Entities.GeoName"/>
+        </member>
+        <member name="P:NGeoNames.Entities.ExtendedGeoName.NameASCII">
+            <summary>
+            Gets/sets the name of the <see cref="T:NGeoNames.Entities.ExtendedGeoName"/>.
+            </summary>
+            <remarks>
+            Non-ASCII values have been found in the data; it is unfortunately (currently) *NOT* guaranteed that this
+            property contains ASCII-only strings.
+            </remarks>
+        </member>
+        <member name="P:NGeoNames.Entities.ExtendedGeoName.AlternateNames">
+            <summary>
+            Gets/sets the alternatenames / ASCII names of the <see cref="T:NGeoNames.Entities.ExtendedGeoName"/>.
+            </summary>
+            <remarks>See <see cref="T:NGeoNames.Entities.AlternateName"/>.</remarks>
+        </member>
+        <member name="P:NGeoNames.Entities.ExtendedGeoName.FeatureClass">
+            <summary>
+            Gets/sets the <see cref="P:NGeoNames.Entities.ExtendedGeoName.FeatureClass"/> code of the <see cref="T:NGeoNames.Entities.ExtendedGeoName"/>.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.ExtendedGeoName.FeatureCode">
+            <summary>
+            Gets/sets the <see cref="P:NGeoNames.Entities.ExtendedGeoName.FeatureCode"/> code of the <see cref="T:NGeoNames.Entities.ExtendedGeoName"/>.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.ExtendedGeoName.CountryCode">
+            <summary>
+            Gets/sets the ISO-3166 2-letter country code of the <see cref="T:NGeoNames.Entities.ExtendedGeoName"/>.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.ExtendedGeoName.AlternateCountryCodes">
+            <summary>
+            Gets/sets the alternate ISO-3166 2-letter country codes.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.ExtendedGeoName.Admincodes">
+            <summary>
+            Gets/sets 1 up to 4 admin codes (indexed 0 to 3) of the <see cref="T:NGeoNames.Entities.ExtendedGeoName"/>.
+            <list type="bullet">
+                <item>Admincode[0]: FIPS code (subject to change to iso code), see remarks and <see cref="T:NGeoNames.Entities.Admin1Code"/>.</item>
+                <item>Admincode[1]: code for the second administrative division (a county in the US). See <see cref="T:NGeoNames.Entities.Admin2Code"/>.</item>
+                <item>Admincode[2]: code for third level administrative division.</item>
+                <item>Admincode[3]: code for fourth level administrative division.</item>
+            </list>
+            </summary>
+            <remarks>
+            Most Admincode[0] codes are FIPS codes. ISO codes are used for US, CH, BE and ME. UK and Greece are using
+            an additional level between country and FIPS code. The code '00' stands for general features where no
+            specific Admincode[0] code is defined.
+            </remarks>
+        </member>
+        <member name="P:NGeoNames.Entities.ExtendedGeoName.Population">
+            <summary>
+            Gets/sets the population of the <see cref="T:NGeoNames.Entities.ExtendedGeoName"/>.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.ExtendedGeoName.Elevation">
+            <summary>
+            Gets/sets the elevation (in meters) of the <see cref="T:NGeoNames.Entities.ExtendedGeoName"/>.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.ExtendedGeoName.Dem">
+            <summary>
+            Gets/sets the Digital Elevation Model, srtm3 or gtopo30, average elevation of 3''x3'' (ca 90mx90m) or 
+            30''x30'' (ca 900mx900m) area in meters of the <see cref="T:NGeoNames.Entities.ExtendedGeoName"/>.
+            </summary>
+            <remarks>
+            srtm processed by cgiar/ciat
+            </remarks>
+        </member>
+        <member name="P:NGeoNames.Entities.ExtendedGeoName.Timezone">
+            <summary>
+            Gets/sets the <see cref="T:NGeoNames.Entities.TimeZone"/> id of the <see cref="T:NGeoNames.Entities.ExtendedGeoName"/>.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.ExtendedGeoName.ModificationDate">
+            <summary>
+            Gets/sets the date of last modification of the <see cref="T:NGeoNames.Entities.ExtendedGeoName"/>.
+            </summary>
+        </member>
+        <member name="T:NGeoNames.Parsers.ContinentParser">
+            <summary>
+            Provides methods for parsing a <see cref="T:NGeoNames.Parsers.ContinentParser"/> object from a string-array.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Parsers.ContinentParser.Parse(System.String[])">
+            <summary>
+            Parses the specified data into a <see cref="T:NGeoNames.Entities.Continent"/> object.
+            </summary>
+            <param name="fields">The fields/data representing a <see cref="T:NGeoNames.Entities.Continent"/> to parse.</param>
+            <returns>Returns a new <see cref="T:NGeoNames.Entities.Continent"/> object.</returns>
+        </member>
+        <member name="P:NGeoNames.Parsers.ContinentParser.HasComments">
+            <summary>
+            Gets wether the file/stream has (or is expected to have) comments (lines starting with "#").
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.ContinentParser.SkipLines">
+            <summary>
+            Gets the number of lines to skip when parsing the file/stream (e.g. 'headers' etc.).
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.ContinentParser.ExpectedNumberOfFields">
+            <summary>
+            Gets the number of fields the file/stream is expected to have; anything else will cause a <see cref="T:NGeoNames.Parsers.ParserException"/>.
+            </summary>
+        </member>
+        <member name="T:NGeoNames.Parsers.CountryInfoParser">
+            <summary>
+            Provides methods for parsing a <see cref="T:NGeoNames.Entities.CountryInfo"/> object from a string-array.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Parsers.CountryInfoParser.Parse(System.String[])">
+            <summary>
+            Parses the specified data into a <see cref="T:NGeoNames.Entities.CountryInfo"/> object.
+            </summary>
+            <param name="fields">The fields/data representing a <see cref="T:NGeoNames.Entities.CountryInfo"/> to parse.</param>
+            <returns>Returns a new <see cref="T:NGeoNames.Entities.CountryInfo"/> object.</returns>
+        </member>
+        <member name="P:NGeoNames.Parsers.CountryInfoParser.HasComments">
+            <summary>
+            Gets wether the file/stream has (or is expected to have) comments (lines starting with "#").
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.CountryInfoParser.SkipLines">
+            <summary>
+            Gets the number of lines to skip when parsing the file/stream (e.g. 'headers' etc.).
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.CountryInfoParser.ExpectedNumberOfFields">
+            <summary>
+            Gets the number of fields the file/stream is expected to have; anything else will cause a <see cref="T:NGeoNames.Parsers.ParserException"/>.
+            </summary>
+        </member>
+        <member name="T:NGeoNames.Parsers.FeatureClassParser">
+            <summary>
+            Provides methods for parsing a <see cref="T:NGeoNames.Entities.FeatureClass"/> object from a string-array.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Parsers.FeatureClassParser.Parse(System.String[])">
+            <summary>
+            Parses the specified data into a <see cref="T:NGeoNames.Entities.FeatureClass"/> object.
+            </summary>
+            <param name="fields">The fields/data representing a <see cref="T:NGeoNames.Entities.FeatureClass"/> to parse.</param>
+            <returns>Returns a new <see cref="T:NGeoNames.Entities.FeatureClass"/> object.</returns>
+        </member>
+        <member name="P:NGeoNames.Parsers.FeatureClassParser.HasComments">
+            <summary>
+            Gets wether the file/stream has (or is expected to have) comments (lines starting with "#").
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.FeatureClassParser.SkipLines">
+            <summary>
+            Gets the number of lines to skip when parsing the file/stream (e.g. 'headers' etc.).
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.FeatureClassParser.ExpectedNumberOfFields">
+            <summary>
+            Gets the number of fields the file/stream is expected to have; anything else will cause a <see cref="T:NGeoNames.Parsers.ParserException"/>.
+            </summary>
+        </member>
+        <member name="T:NGeoNames.Parsers.FeatureCodeParser">
+            <summary>
+            Provides methods for parsing a <see cref="T:NGeoNames.Entities.FeatureCode"/> object from a string-array.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Parsers.FeatureCodeParser.Parse(System.String[])">
+            <summary>
+            Parses the specified data into a <see cref="T:NGeoNames.Entities.FeatureCode"/> object.
+            </summary>
+            <param name="fields">The fields/data representing a <see cref="T:NGeoNames.Entities.FeatureCode"/> to parse.</param>
+            <returns>Returns a new <see cref="T:NGeoNames.Entities.FeatureCode"/> object.</returns>
+        </member>
+        <member name="P:NGeoNames.Parsers.FeatureCodeParser.HasComments">
+            <summary>
+            Gets wether the file/stream has (or is expected to have) comments (lines starting with "#").
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.FeatureCodeParser.SkipLines">
+            <summary>
+            Gets the number of lines to skip when parsing the file/stream (e.g. 'headers' etc.).
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.FeatureCodeParser.ExpectedNumberOfFields">
+            <summary>
+            Gets the number of fields the file/stream is expected to have; anything else will cause a <see cref="T:NGeoNames.Parsers.ParserException"/>.
+            </summary>
+        </member>
+        <member name="T:NGeoNames.Parsers.GeoNameParser">
+            <summary>
+            Provides methods for parsing a <see cref="T:NGeoNames.Entities.GeoName"/> object from a string-array.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Parsers.GeoNameParser.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:NGeoNames.Parsers.GeoNameParser"/> class with default values (extended fileformat, 19 fields).
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Parsers.GeoNameParser.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:NGeoNames.Parsers.GeoNameParser"/> class with specified file format.
+            </summary>
+            <param name="useextendedfileformat">
+            When this parameter is true, the (default) file format (19 fields) will be assumed for geoname data,
+            when this parameter is false, the "compact file format" (4 fields: Id, Name, Latitude and Longitude)
+            will be assumed.
+            </param>
+        </member>
+        <member name="M:NGeoNames.Parsers.GeoNameParser.Parse(System.String[])">
+            <summary>
+            Parses the specified data into a <see cref="T:NGeoNames.Entities.GeoName"/> object.
+            </summary>
+            <param name="fields">The fields/data representing a <see cref="T:NGeoNames.Entities.GeoName"/> to parse.</param>
+            <returns>Returns a new <see cref="T:NGeoNames.Entities.GeoName"/> object.</returns>
+        </member>
+        <member name="P:NGeoNames.Parsers.GeoNameParser.HasComments">
+            <summary>
+            Gets wether the file/stream has (or is expected to have) comments (lines starting with "#").
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.GeoNameParser.SkipLines">
+            <summary>
+            Gets the number of lines to skip when parsing the file/stream (e.g. 'headers' etc.).
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.GeoNameParser.ExpectedNumberOfFields">
+            <summary>
+            Gets the number of fields the file/stream is expected to have; anything else will cause a <see cref="T:NGeoNames.Parsers.ParserException"/>.
+            </summary>
+        </member>
+        <member name="T:NGeoNames.Parsers.ExtendedGeoNameParser">
+            <summary>
+            Provides methods for parsing an <see cref="T:NGeoNames.Entities.ExtendedGeoName"/> object from a string-array.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Parsers.ExtendedGeoNameParser.Parse(System.String[])">
+            <summary>
+            Parses the specified data into an <see cref="T:NGeoNames.Entities.ExtendedGeoName"/> object.
+            </summary>
+            <param name="fields">The fields/data representing an <see cref="T:NGeoNames.Entities.ExtendedGeoName"/> to parse.</param>
+            <returns>Returns a new <see cref="T:NGeoNames.Entities.ExtendedGeoName"/> object.</returns>
+        </member>
+        <member name="P:NGeoNames.Parsers.ExtendedGeoNameParser.HasComments">
+            <summary>
+            Gets wether the file/stream has (or is expected to have) comments (lines starting with "#").
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.ExtendedGeoNameParser.SkipLines">
+            <summary>
+            Gets the number of lines to skip when parsing the file/stream (e.g. 'headers' etc.).
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.ExtendedGeoNameParser.ExpectedNumberOfFields">
+            <summary>
+            Gets the number of fields the file/stream is expected to have; anything else will cause a <see cref="T:NGeoNames.Parsers.ParserException"/>.
+            </summary>
+        </member>
+        <member name="T:NGeoNames.Parsers.HierarchyParser">
+            <summary>
+            Provides methods for parsing a <see cref="T:NGeoNames.Entities.HierarchyNode"/> object from a string-array.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Parsers.HierarchyParser.Parse(System.String[])">
+            <summary>
+            Parses the specified data into a <see cref="T:NGeoNames.Entities.HierarchyNode"/> object.
+            </summary>
+            <param name="fields">The fields/data representing a <see cref="T:NGeoNames.Entities.HierarchyNode"/> to parse.</param>
+            <returns>Returns a new <see cref="T:NGeoNames.Entities.HierarchyNode"/> object.</returns>
+        </member>
+        <member name="P:NGeoNames.Parsers.HierarchyParser.HasComments">
+            <summary>
+            Gets wether the file/stream has (or is expected to have) comments (lines starting with "#").
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.HierarchyParser.SkipLines">
+            <summary>
+            Gets the number of lines to skip when parsing the file/stream (e.g. 'headers' etc.).
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.HierarchyParser.ExpectedNumberOfFields">
+            <summary>
+            Gets the number of fields the file/stream is expected to have; anything else will cause a <see cref="T:NGeoNames.Parsers.ParserException"/>.
+            </summary>
+        </member>
+        <member name="T:NGeoNames.Entities.ISOLanguageCode">
+            <summary>
+            Represents a language.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.ISOLanguageCode.ISO_639_3">
+            <summary>
+            Gets/sets the ISO-639 Alpha-3 code for comprehensive coverage of languages.
+            </summary>
+            <remarks>See <a href="https://en.wikipedia.org/wiki/ISO_639-3">https://en.wikipedia.org/wiki/ISO_639-3</a>.</remarks>
+        </member>
+        <member name="P:NGeoNames.Entities.ISOLanguageCode.ISO_639_2">
+            <summary>
+            Gets/sets the ISO-639 Alpha-3 code.
+            </summary>
+            <remarks>See <a href="https://en.wikipedia.org/wiki/ISO_639-2">https://en.wikipedia.org/wiki/ISO_639-2</a>.</remarks>
+        </member>
+        <member name="P:NGeoNames.Entities.ISOLanguageCode.ISO_639_1">
+            <summary>
+            Gets/sets the ISO-639 Alpha-2 code.
+            </summary>
+            <remarks>See <a href="https://en.wikipedia.org/wiki/ISO_639-1">https://en.wikipedia.org/wiki/ISO_639-1</a>.</remarks>
+        </member>
+        <member name="P:NGeoNames.Entities.ISOLanguageCode.LanguageName">
+            <summary>
+            Gets/sets the name of the language.
+            </summary>
+        </member>
+        <member name="T:NGeoNames.Parsers.ISOLanguageCodeParser">
+            <summary>
+            Provides methods for parsing an <see cref="T:NGeoNames.Entities.ISOLanguageCode"/> object from a string-array.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Parsers.ISOLanguageCodeParser.Parse(System.String[])">
+            <summary>
+            Parses the specified data into an <see cref="T:NGeoNames.Entities.ISOLanguageCode"/> object.
+            </summary>
+            <param name="fields">The fields/data representing an <see cref="T:NGeoNames.Entities.ISOLanguageCode"/> to parse.</param>
+            <returns>Returns a new <see cref="T:NGeoNames.Entities.ISOLanguageCode"/> object.</returns>
+        </member>
+        <member name="P:NGeoNames.Parsers.ISOLanguageCodeParser.HasComments">
+            <summary>
+            Gets wether the file/stream has (or is expected to have) comments (lines starting with "#").
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.ISOLanguageCodeParser.SkipLines">
+            <summary>
+            Gets the number of lines to skip when parsing the file/stream (e.g. 'headers' etc.).
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.ISOLanguageCodeParser.ExpectedNumberOfFields">
+            <summary>
+            Gets the number of fields the file/stream is expected to have; anything else will cause a <see cref="T:NGeoNames.Parsers.ParserException"/>.
+            </summary>
+        </member>
+        <member name="T:NGeoNames.Parsers.PostalcodeParser">
+            <summary>
+            Provides methods for parsing a <see cref="T:NGeoNames.Entities.Postalcode"/> object from a string-array.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Parsers.PostalcodeParser.Parse(System.String[])">
+            <summary>
+            Parses the specified data into a <see cref="T:NGeoNames.Entities.Postalcode"/> object.
+            </summary>
+            <param name="fields">The fields/data representing a <see cref="T:NGeoNames.Entities.Postalcode"/> to parse.</param>
+            <returns>Returns a new <see cref="T:NGeoNames.Entities.Postalcode"/> object.</returns>
+        </member>
+        <member name="P:NGeoNames.Parsers.PostalcodeParser.HasComments">
+            <summary>
+            Gets wether the file/stream has (or is expected to have) comments (lines starting with "#").
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.PostalcodeParser.SkipLines">
+            <summary>
+            Gets the number of lines to skip when parsing the file/stream (e.g. 'headers' etc.).
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.PostalcodeParser.ExpectedNumberOfFields">
+            <summary>
+            Gets the number of fields the file/stream is expected to have; anything else will cause a <see cref="T:NGeoNames.Parsers.ParserException"/>.
+            </summary>
+        </member>
+        <member name="T:NGeoNames.Parsers.TimeZoneParser">
+            <summary>
+            Provides methods for parsing a <see cref="T:NGeoNames.Entities.TimeZone"/> object from a string-array.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Parsers.TimeZoneParser.Parse(System.String[])">
+            <summary>
+            Parses the specified data into a <see cref="T:NGeoNames.Entities.TimeZone"/> object.
+            </summary>
+            <param name="fields">The fields/data representing a <see cref="T:NGeoNames.Entities.TimeZone"/> to parse.</param>
+            <returns>Returns a new <see cref="T:NGeoNames.Entities.TimeZone"/> object.</returns>
+        </member>
+        <member name="P:NGeoNames.Parsers.TimeZoneParser.HasComments">
+            <summary>
+            Gets wether the file/stream has (or is expected to have) comments (lines starting with "#").
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.TimeZoneParser.SkipLines">
+            <summary>
+            Gets the number of lines to skip when parsing the file/stream (e.g. 'headers' etc.).
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.TimeZoneParser.ExpectedNumberOfFields">
+            <summary>
+            Gets the number of fields the file/stream is expected to have; anything else will cause a <see cref="T:NGeoNames.Parsers.ParserException"/>.
+            </summary>
+        </member>
+        <member name="T:NGeoNames.Parsers.UserTagParser">
+            <summary>
+            Provides methods for parsing a <see cref="T:NGeoNames.Entities.UserTag"/> object from a string-array.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Parsers.UserTagParser.Parse(System.String[])">
+            <summary>
+            Parses the specified data into a <see cref="T:NGeoNames.Entities.UserTag"/> object.
+            </summary>
+            <param name="fields">The fields/data representing a <see cref="T:NGeoNames.Entities.UserTag"/> to parse.</param>
+            <returns>Returns a new <see cref="T:NGeoNames.Entities.UserTag"/> object.</returns>
+        </member>
+        <member name="P:NGeoNames.Parsers.UserTagParser.HasComments">
+            <summary>
+            Gets wether the file/stream has (or is expected to have) comments (lines starting with "#").
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.UserTagParser.SkipLines">
+            <summary>
+            Gets the number of lines to skip when parsing the file/stream (e.g. 'headers' etc.).
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Parsers.UserTagParser.ExpectedNumberOfFields">
+            <summary>
+            Gets the number of fields the file/stream is expected to have; anything else will cause a <see cref="T:NGeoNames.Parsers.ParserException"/>.
+            </summary>
+        </member>
+        <member name="T:NGeoNames.Entities.TimeZone">
+            <summary>
+            Represents a timezone.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.TimeZone.CountryCode">
+            <summary>
+            Gets/sets the ISO-3166 2-letter country code of the <see cref="T:NGeoNames.Entities.TimeZone"/>.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.TimeZone.TimeZoneId">
+            <summary>
+            Gets/sets the timezone "id" of the <see cref="T:NGeoNames.Entities.TimeZone"/>.
+            </summary>
+            <remarks>
+            Note that the data contains underscores ("_") for spaces but that these are replaced with actual spaces
+            when reading data and that these spaces get replace with underscores again when writing data.
+            </remarks>
+        </member>
+        <member name="P:NGeoNames.Entities.TimeZone.GMTOffset">
+            <summary>
+            Gets/sets the GMT ofsset (reference date Jan. 1st) of the <see cref="T:NGeoNames.Entities.TimeZone"/>.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.TimeZone.DSTOffset">
+            <summary>
+            Gets/sets the DST ofsset (reference date Jul. 1st) of the <see cref="T:NGeoNames.Entities.TimeZone"/>.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Entities.TimeZone.RawOffset">
+            <summary>
+            Gets/sets the raw offset (independant of DST) of the <see cref="T:NGeoNames.Entities.TimeZone"/>.
+            </summary>
+        </member>
+        <member name="T:NGeoNames.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:NGeoNames.Properties.Resources.continentCodes">
+             <summary>
+               Looks up a localized string similar to #See http://download.geonames.org/export/dump/readme.txt
+            AF	Africa	6255146
+            AS	Asia	6255147
+            EU	Europe	6255148
+            NA	North America	6255149
+            OC	Oceania	6255151
+            SA	South America	6255150
+            AN	Antarctica	6255152.
+             </summary>
+        </member>
+        <member name="P:NGeoNames.Properties.Resources.featureClasses_en">
+             <summary>
+               Looks up a localized string similar to #See http://www.geonames.org/export/codes.html
+            A	country, state, region, ...
+            H	stream, lake, ...
+            L	parks, area, ...
+            P	city, village, ...
+            R	road, railroad
+            S	spot, building, farm
+            T	mountain, hill, rock, ...
+            U	undersea
+            V	forest, heath, ....
+             </summary>
+        </member>
+        <member name="T:NGeoNames.ReverseGeoCode`1">
+            <summary>
+            Provides reverse geocoding methods.
+            </summary>
+            <typeparam name="T">The type of elements in ReverseGeoCoder.</typeparam>
+        </member>
+        <member name="M:NGeoNames.ReverseGeoCode`1.#ctor">
+            <summary>
+            Initializes a new, empty <see cref="T:NGeoNames.ReverseGeoCode`1"/> object.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.ReverseGeoCode`1.#ctor(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Initializes a new <see cref="T:NGeoNames.ReverseGeoCode`1"/> object, populating the internal structures with the provided
+            <see cref="T:NGeoNames.Entities.IGeoLocation"/>s.
+            </summary>
+            <param name="nodes">
+            An IEnumerable&lt;T&gt; of <see cref="T:NGeoNames.Entities.IGeoLocation"/> to populate the <see cref="T:NGeoNames.ReverseGeoCode`1"/> with.
+            </param>
+            <remarks>
+            This constructor will, internally, call the <see cref="M:NGeoNames.ReverseGeoCode`1.Balance"/> method when the internal structure is initialized.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.ReverseGeoCode`1.Add(`0)">
+            <summary>
+            Adds a node to the <see cref="T:NGeoNames.ReverseGeoCode`1"/> internal structure.
+            </summary>
+            <param name="node">The <see cref="T:NGeoNames.Entities.IGeoLocation"/> to add.</param>
+        </member>
+        <member name="M:NGeoNames.ReverseGeoCode`1.AddRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Adds the specified nodes to the <see cref="T:NGeoNames.ReverseGeoCode`1"/> internal structure.
+            </summary>
+            <param name="nodes">An IEnumerable&lt;T&gt; of <see cref="T:NGeoNames.Entities.IGeoLocation"/>s to add.</param>
+        </member>
+        <member name="M:NGeoNames.ReverseGeoCode`1.Balance">
+            <summary>
+            Balance the internal structure (KD-tree).
+            </summary>
+            <remarks>
+            This method only needs to be called when all nodes have been added; it *can* be called earlier but is
+            not of much use. Note that the <see cref="M:NGeoNames.ReverseGeoCode`1.#ctor(System.Collections.Generic.IEnumerable{`0})"/> calls this
+            method automatically; no need to call it when using this constructor.
+            </remarks>
+        </member>
+        <member name="M:NGeoNames.ReverseGeoCode`1.RadialSearch(System.Double,System.Double,System.Int32)">
+            <summary>
+            Performs a radial search on the nodes from a specified center limiting the number of results.
+            </summary>
+            <param name="lat">The latitude of the search center.</param>
+            <param name="lng">The longitude of the search center.</param>
+            <param name="maxcount">The maximum number of results to return.</param>
+            <returns>Returns up to maxcount nodes matching the radial search.</returns>
+        </member>
+        <member name="M:NGeoNames.ReverseGeoCode`1.RadialSearch(`0,System.Int32)">
+            <summary>
+            Performs a radial search on the nodes from a specified center limiting the number of results.
+            </summary>
+            <param name="center">The center of the search.</param>
+            <param name="maxcount">The maximum number of results to return.</param>
+            <returns>Returns up to maxcount nodes matching the radial search.</returns>
+        </member>
+        <member name="M:NGeoNames.ReverseGeoCode`1.RadialSearch(System.Double,System.Double,System.Double)">
+            <summary>
+            Performs a radial search on the nodes from a specified center within a given radius.
+            </summary>
+            <param name="lat">The latitude of the search center.</param>
+            <param name="lng">The longitude of the search center.</param>
+            <param name="radius">The radius to search in.</param>
+            <returns>Returns the nodes matching the radial search.</returns>
+        </member>
+        <member name="M:NGeoNames.ReverseGeoCode`1.RadialSearch(`0,System.Double)">
+            <summary>
+            Performs a radial search on the nodes from a specified center within a given radius.
+            </summary>
+            <param name="center">The center of the search.</param>
+            <param name="radius">The radius to search in.</param>
+            <returns>Returns the nodes matching the radial search.</returns>
+        </member>
+        <member name="M:NGeoNames.ReverseGeoCode`1.RadialSearch(System.Double,System.Double,System.Double,System.Int32)">
+            <summary>
+            Performs a radial search on the nodes from a specified center within a given radius limiting the number of
+            results.
+            </summary>
+            <param name="lat">The latitude of the search center.</param>
+            <param name="lng">The longitude of the search center.</param>
+            <param name="radius">The radius to search in.</param>
+            <param name="maxcount">The maximum number of results to return.</param>
+            <returns>Returns up to maxcount nodes matching the radial search.</returns>
+        </member>
+        <member name="M:NGeoNames.ReverseGeoCode`1.RadialSearch(`0,System.Double,System.Int32)">
+            <summary>
+            Performs a radial search on the nodes from a specified center within a given radius limiting the number of
+            results.
+            </summary>
+            <param name="center">The center of the search.</param>
+            <param name="radius">The radius to search in.</param>
+            <param name="maxcount">The maximum number of results to return.</param>
+            <returns>Returns up to maxcount nodes matching the radial search.</returns>
+        </member>
+        <member name="M:NGeoNames.ReverseGeoCode`1.NearestNeighbourSearch(System.Double,System.Double)">
+            <summary>
+            Performs a nearest neighbour search on the nodes from a specified center.
+            </summary>
+            <param name="lat">The latitude of the search center.</param>
+            <param name="lng">The longitude of the search center.</param>
+            <returns>Returns nodes in matching order of the nearest neighbour search.</returns>
+        </member>
+        <member name="M:NGeoNames.ReverseGeoCode`1.NearestNeighbourSearch(System.Double,System.Double,System.Int32)">
+            <summary>
+            Performs a nearest neighbour search on the nodes from a specified center limiting the number of results.
+            </summary>
+            <param name="lat">The latitude of the search center.</param>
+            <param name="lng">The longitude of the search center.</param>
+            <param name="maxcount">The maximum number of results to return.</param>
+            <returns>Returns up to maxcount nodes in matching order of the nearest neighbour search.</returns>
+        </member>
+        <member name="M:NGeoNames.ReverseGeoCode`1.NearestNeighbourSearch(`0)">
+            <summary>
+            Performs a nearest neighbour search on the nodes from a specified center.
+            </summary>
+            <param name="center">The center of the search.</param>
+            <returns>Returns nodes in matching order of the nearest neighbour search.</returns>
+        </member>
+        <member name="M:NGeoNames.ReverseGeoCode`1.NearestNeighbourSearch(`0,System.Int32)">
+            <summary>
+            Performs a nearest neighbour search on the nodes from a specified center limiting the number of results.
+            </summary>
+            <param name="center">The center of the search.</param>
+            <param name="maxcount">The maximum number of results to return.</param>
+            <returns>Returns up to maxcount nodes in matching order of the nearest neighbour search.</returns>
+        </member>
+        <member name="M:NGeoNames.ReverseGeoCode`1.CreateFromLatLong(System.Double,System.Double)">
+            <summary>
+            Creates a <see cref="T:NGeoNames.Entities.IGeoLocation"/> from a latitude and longitude.
+            </summary>
+            <param name="lat">The latitude of the object.</param>
+            <param name="lng">The longitude of the object.</param>
+            <returns>Returns a <see cref="T:NGeoNames.Entities.GeoName"/>, <see cref="T:NGeoNames.Entities.ExtendedGeoName"/> or derived.</returns>
+        </member>
+        <member name="T:NGeoNames.DoubleMath">
+            <summary>
+            This class is for internal use (Kd-Tree) only.
+            </summary>
+        </member>
+        <member name="T:NGeoNames.Composers.Admin1CodeComposer">
+            <summary>
+            Provides methods for composing a string representing an <see cref="T:NGeoNames.Entities.Admin1Code"/>.
+            </summary>
+        </member>
+        <member name="M:NGeoNames.Composers.Admin1CodeComposer.Compose(NGeoNames.Entities.Admin1Code)">
+            <summary>
+            Composes the specified <see cref="T:NGeoNames.Entities.Admin1Code"/> into a string.
+            </summary>
+            <param name="value">The <see cref="T:NGeoNames.Entities.Admin1Code"/> to be composed into a string.</param>
+            <returns>A string representing the specified <see cref="T:NGeoNames.Entities.Admin1Code"/>.</returns>
+        </member>
+    </members>
+</doc>

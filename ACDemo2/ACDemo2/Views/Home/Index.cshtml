@@ -1,0 +1,21 @@
+﻿<div class="jumbotron">
+    <h1>@ViewBag.Title</h1>
+    <p class="lead"> This is a test application</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>To Know More</h2>
+        <p> @Html.ActionLink("Home", "Index", "Home", new { @class = "btn btn-primary" }) <br/> Go to Home </p>
+        
+    </div>
+    <div class="col-md-4">
+        <h2>Sign Up</h2>
+        <p>@Html.ActionLink("SignUp", "Signup", "Home", new { @class = "btn btn-primary" }) <br /> Sign up here for a new account  </p>
+        
+    </div>
+    <div class="col-md-4">
+        <h2>Log-in</h2>
+        <p>@Html.ActionLink("LogIn", "Login", "Home", new { @class = "btn btn-primary" }) <br /> Login here </p>
+    </div>
+</div>
